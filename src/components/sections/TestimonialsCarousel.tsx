@@ -4,7 +4,7 @@ import { useReducedMotion } from 'motion/react';
 import { DEMO_TESTIMONIALS } from '../../data/testimonials';
 
 /**
- * Google-inspired dark editorial testimonial carousel.
+ * Google-inspired light ivory editorial testimonial carousel.
  * - Visibly labelled "Sample Testimonials — Demo Content".
  * - Hidden completely when demoMode is false.
  * - Zero fake Google Maps verification badges or aggregate ratings.
@@ -70,7 +70,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
   return (
     <section
       aria-label="Sample student and parent testimonials"
-      className="relative bg-[#0E0E0E] pb-[var(--section-py)] pt-8"
+      className="relative bg-[#E8E0D3] pb-[var(--section-py)] pt-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}
@@ -81,10 +81,10 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
         {/* Header Bar */}
         <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <span className="inline-block border border-[#C5A059]/45 bg-[#C5A059]/10 px-3 py-1 font-display text-xs uppercase tracking-[0.18em] text-[#C5A059]">
+            <span className="inline-block border border-[#B89B63]/55 bg-[#FFFFFF]/80 px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
               Sample Testimonials — Demo Content
             </span>
-            <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-[#F5F1E8] sm:text-4xl">
+            <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-[#302B28] sm:text-4xl">
               Perspectives From the Mat
             </h3>
           </div>
@@ -94,7 +94,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
               type="button"
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="inline-flex h-11 w-11 items-center justify-center border border-[#F5F1E8]/20 bg-[#141414] text-[#F5F1E8] transition-colors hover:border-[#B91C1C] hover:bg-[#B91C1C]"
+              className="inline-flex h-11 w-11 items-center justify-center border border-[#302B28]/20 bg-[#FFFFFF] text-[#302B28] transition-colors hover:border-[#A6192E] hover:bg-[#A6192E] hover:text-[#FFFFFF]"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -102,7 +102,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
               type="button"
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="inline-flex h-11 w-11 items-center justify-center border border-[#F5F1E8]/20 bg-[#141414] text-[#F5F1E8] transition-colors hover:border-[#B91C1C] hover:bg-[#B91C1C]"
+              className="inline-flex h-11 w-11 items-center justify-center border border-[#302B28]/20 bg-[#FFFFFF] text-[#302B28] transition-colors hover:border-[#A6192E] hover:bg-[#A6192E] hover:text-[#FFFFFF]"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -139,26 +139,26 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                 className="shrink-0 px-2.5 first:pl-0 last:pr-0"
                 style={{ width: `${100 / visibleCount}%` }}
               >
-                <article className="flex h-full flex-col justify-between border border-[#F5F1E8]/12 bg-[#141414] p-6">
+                <article className="flex h-full flex-col justify-between border border-[#302B28]/12 bg-[#FFFFFF] p-6 shadow-[0_12px_32px_rgba(48,43,40,0.06)]">
                   <div>
                     {/* Reviewer Initials + Perspective Header */}
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center border border-[#C5A059]/35 bg-[#0C0C0C] font-display text-sm font-bold tracking-[0.08em] text-[#F5F1E8]">
+                        <div className="flex h-10 w-10 items-center justify-center border border-[#B89B63]/55 bg-[#F7F4ED] font-display text-sm font-bold tracking-[0.08em] text-[#302B28]">
                           {item.initials}
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-[#F5F1E8]">
+                          <p className="text-sm font-semibold text-[#302B28]">
                             {item.authorLabel}
                           </p>
-                          <p className="text-xs text-[#F5F1E8]/50">
+                          <p className="text-xs text-[#655D56]">
                             {item.perspective} · {item.timeframe}
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    {/* Muted Gold Star Rating */}
+                    {/* Champagne Gold Star Rating */}
                     <div
                       className="mt-4 flex items-center gap-1"
                       aria-label={`${item.rating} out of 5 stars`}
@@ -168,20 +168,20 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                           key={starIdx}
                           className={`h-3.5 w-3.5 ${
                             starIdx < item.rating
-                              ? 'fill-[#C5A059] text-[#C5A059]'
-                              : 'text-[#F5F1E8]/20'
+                              ? 'fill-[#B89B63] text-[#B89B63]'
+                              : 'text-[#302B28]/20'
                           }`}
                           aria-hidden="true"
                         />
                       ))}
                     </div>
 
-                    <p className="mt-4 text-sm leading-[1.72] text-[#F5F1E8]/80">
+                    <p className="mt-4 text-sm leading-[1.72] text-[#302B28]/88">
                       “{item.quote}”
                     </p>
                   </div>
 
-                  <div className="mt-6 border-t border-[#F5F1E8]/10 pt-3 text-[11px] uppercase tracking-[0.16em] text-[#F5F1E8]/40">
+                  <div className="mt-6 border-t border-[#302B28]/10 pt-3 text-[11px] uppercase tracking-[0.16em] text-[#655D56]">
                     Demo Perspective — Not a live Google review
                   </div>
                 </article>
@@ -203,13 +203,13 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                 onClick={() => setActiveIndex(idx)}
                 className={`h-1.5 transition-all ${
                   activeIndex === idx
-                    ? 'w-8 bg-[#B91C1C]'
-                    : 'w-3 bg-[#F5F1E8]/20 hover:bg-[#F5F1E8]/45'
+                    ? 'w-8 bg-[#A6192E]'
+                    : 'w-3 bg-[#302B28]/20 hover:bg-[#302B28]/45'
                 }`}
               />
             ))}
           </div>
-          <span className="font-display text-xs uppercase tracking-[0.18em] text-[#F5F1E8]/45">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#655D56]">
             {activeIndex + 1} / {maxIndex + 1}
           </span>
         </div>

@@ -1,22 +1,20 @@
 :root {
-  /* Japanese Warrior Palette */
-  --color-obsidian: #0c0c0c;
-  --color-obsidian-elevated: #141414;
-  --color-charcoal: #292929;
-  --color-charcoal-soft: #1b1b1b;
-  --color-crimson: #b91c1c;
-  --color-crimson-bright: #dc2626;
-  --color-burgundy: #5c0d0d;
-  --color-ivory: #f5f1e8;
-  --color-ivory-muted: rgba(245, 241, 232, 0.72);
-  --color-ivory-subtle: rgba(245, 241, 232, 0.44);
-  --color-gold: #c5a059;
-  --color-gold-subtle: rgba(197, 160, 89, 0.25);
+  /* Japanese Ivory & Crimson Palette */
+  --color-ivory: #f7f4ed;
+  --color-beige: #e8e0d3;
+  --color-white: #ffffff;
+  --color-crimson: #a6192e;
+  --color-crimson-bright: #bf2138;
+  --color-espresso: #302b28;
+  --color-warm-grey: #655d56;
+  --color-gold: #b89b63;
+  --color-gold-subtle: rgba(184, 155, 99, 0.25);
 
-  /* Editorial Hairlines */
-  --border-subtle: rgba(245, 241, 232, 0.1);
-  --border-strong: rgba(245, 241, 232, 0.22);
-  --border-crimson: rgba(185, 28, 28, 0.45);
+  /* Editorial Hairlines & Warm Shadows */
+  --border-subtle: rgba(48, 43, 40, 0.12);
+  --border-strong: rgba(48, 43, 40, 0.22);
+  --border-crimson: rgba(166, 25, 46, 0.42);
+  --shadow-warm: 0 24px 60px rgba(48, 43, 40, 0.1);
 
   /* Typography */
   --font-display: 'Barlow Condensed', 'Impact', 'Arial Narrow', sans-serif;

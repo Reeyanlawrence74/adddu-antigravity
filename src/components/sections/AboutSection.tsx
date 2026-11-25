@@ -13,15 +13,15 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative border-t border-[#F5F1E8]/10 bg-[#0C0C0C] py-[var(--section-py)]"
+      className="relative border-t border-[#302B28]/12 bg-[#F7F4ED] py-[var(--section-py)]"
     >
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         {/* Chapter Label */}
         <div className="mb-10 flex items-center gap-4">
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#B91C1C]">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#A6192E]">
             {about.chapterLabel}
           </span>
-          <span className="h-px flex-1 bg-[#F5F1E8]/10" aria-hidden="true" />
+          <span className="h-px flex-1 bg-[#302B28]/12" aria-hidden="true" />
         </div>
 
         {/* Asymmetrical Editorial Grid */}
@@ -49,30 +49,30 @@ export const AboutSection: React.FC = () => {
               mode="blur-focus"
               lines={about.headingLines}
               accentLastLine
-              className="font-display text-[clamp(3rem,6vw,5.4rem)] font-extrabold uppercase leading-[0.9] text-[#F5F1E8]"
+              className="font-display text-[clamp(3rem,6vw,5.4rem)] font-extrabold uppercase leading-[0.9] text-[#302B28]"
             />
 
-            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-[#F5F1E8]/90 sm:text-xl">
+            <p className="mt-8 max-w-2xl text-lg font-medium leading-relaxed text-[#302B28] sm:text-xl">
               {about.lead}
             </p>
 
-            <div className="mt-6 space-y-5 max-w-2xl text-base leading-[1.78] text-[#F5F1E8]/70">
+            <div className="mt-6 max-w-2xl space-y-5 text-base leading-[1.78] text-[#655D56]">
               {about.paragraphs.map((para, idx) => (
                 <p key={idx}>{para}</p>
               ))}
             </div>
 
             {/* Minimal Editorial Pillars (No SaaS cards) */}
-            <div className="mt-12 grid grid-cols-1 gap-8 border-y border-[#F5F1E8]/12 py-8 sm:grid-cols-3">
+            <div className="mt-12 grid grid-cols-1 gap-8 border-y border-[#302B28]/14 py-8 sm:grid-cols-3">
               {about.pillars.map((pillar, idx) => (
                 <div key={pillar.title} className="relative">
-                  <span className="font-display text-xs uppercase tracking-[0.22em] text-[#C5A059]">
+                  <span className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-[#8E6F38]">
                     0{idx + 1}
                   </span>
-                  <h3 className="mt-2 font-display text-2xl font-bold uppercase tracking-[0.04em] text-[#F5F1E8]">
+                  <h3 className="mt-2 font-display text-2xl font-bold uppercase tracking-[0.04em] text-[#302B28]">
                     {pillar.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#F5F1E8]/65">
+                  <p className="mt-2 text-sm leading-relaxed text-[#655D56]">
                     {pillar.text}
                   </p>
                 </div>

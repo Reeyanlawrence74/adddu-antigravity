@@ -3,16 +3,16 @@
 
 @layer base {
   html {
-    background-color: var(--color-obsidian);
-    color: var(--color-ivory);
+    background-color: var(--color-ivory);
+    color: var(--color-espresso);
     font-family: var(--font-body);
     scroll-behavior: smooth;
     overflow-x: clip;
   }
 
   body {
-    background-color: var(--color-obsidian);
-    color: var(--color-ivory);
+    background-color: var(--color-ivory);
+    color: var(--color-espresso);
     font-family: var(--font-body);
     overflow-x: clip;
     margin: 0;
@@ -28,7 +28,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-crimson-bright);
+    outline: 2px solid var(--color-crimson);
     outline-offset: 3px;
   }
 }
@@ -41,9 +41,9 @@
   font-family: var(--font-body);
 }
 
-/* Editorial grain overlay — subtle film texture without blocking interactions */
+/* Editorial grain overlay — subtle warm texture without blocking interactions */
 .film-grain {
-  background-image: radial-gradient(rgba(245, 241, 232, 0.06) 1px, transparent 0);
+  background-image: radial-gradient(rgba(48, 43, 40, 0.06) 1px, transparent 0);
   background-size: 24px 24px;
 }
 

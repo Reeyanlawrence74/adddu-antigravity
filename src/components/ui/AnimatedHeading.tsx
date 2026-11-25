@@ -40,7 +40,7 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
           <span
             key={line + index}
             className={`block ${
-              accentLastLine && index === lines.length - 1 ? 'text-[#B91C1C]' : ''
+              accentLastLine && index === lines.length - 1 ? 'text-[#A6192E]' : ''
             }`}
           >
             {line}
@@ -69,7 +69,7 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
                 ease: [0.22, 1, 0.36, 1],
               }}
               className={`block ${
-                accentLastLine && index === lines.length - 1 ? 'text-[#B91C1C]' : ''
+                accentLastLine && index === lines.length - 1 ? 'text-[#A6192E]' : ''
               }`}
             >
               {line}
@@ -86,7 +86,7 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
               <span
                 key={line + lineIdx}
                 className={`block ${
-                  accentLastLine && lineIdx === lines.length - 1 ? 'text-[#B91C1C]' : ''
+                  accentLastLine && lineIdx === lines.length - 1 ? 'text-[#A6192E]' : ''
                 }`}
               >
                 {words.map((word, wordIdx) => (
@@ -135,7 +135,7 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
                 ease: [0.22, 1, 0.36, 1],
               }}
               className={`block ${
-                accentLastLine && index === lines.length - 1 ? 'text-[#B91C1C]' : ''
+                accentLastLine && index === lines.length - 1 ? 'text-[#A6192E]' : ''
               }`}
             >
               {line}
@@ -161,7 +161,7 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className={`block ${
-                  accentLastLine && index === lines.length - 1 ? 'text-[#B91C1C]' : ''
+                  accentLastLine && index === lines.length - 1 ? 'text-[#A6192E]' : ''
                 }`}
               >
                 {line}

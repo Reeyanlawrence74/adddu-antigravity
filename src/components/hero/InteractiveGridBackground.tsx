@@ -68,7 +68,7 @@ export const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps>
       const t = timeMs * 0.001;
       const cycle = (Math.sin((t / 6.5) * Math.PI * 2) + 1) * 0.5;
 
-      // Restrained spotlight behind centre silhouette
+      // Restrained warm crimson & beige spotlight behind centre silhouette
       const centerGrad = ctx.createRadialGradient(
         width * 0.5,
         height * 0.46,
@@ -77,10 +77,10 @@ export const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps>
         height * 0.46,
         Math.max(width, height) * 0.48
       );
-      centerGrad.addColorStop(0, `rgba(185, 28, 28, ${0.11 + cycle * 0.05})`);
-      centerGrad.addColorStop(0.42, 'rgba(92, 13, 13, 0.08)');
-      centerGrad.addColorStop(0.8, 'rgba(41, 41, 41, 0.03)');
-      centerGrad.addColorStop(1, 'rgba(12, 12, 12, 0)');
+      centerGrad.addColorStop(0, `rgba(166, 25, 46, ${0.07 + cycle * 0.035})`);
+      centerGrad.addColorStop(0.45, 'rgba(232, 224, 211, 0.42)');
+      centerGrad.addColorStop(0.8, 'rgba(247, 244, 237, 0.16)');
+      centerGrad.addColorStop(1, 'rgba(247, 244, 237, 0)');
       ctx.fillStyle = centerGrad;
       ctx.fillRect(0, 0, width, height);
 
@@ -127,16 +127,16 @@ export const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps>
             ? 0
             : Math.sin(c * 0.24 + t * 0.9) * Math.cos(r * 0.24 - t * 0.7) * 0.5 + 0.5;
 
-          const baseAlpha = 0.14 + wave * 0.16;
-          const alpha = Math.min(0.82, baseAlpha + influence * 0.52);
+          const baseAlpha = 0.15 + wave * 0.16;
+          const alpha = Math.min(0.72, baseAlpha + influence * 0.45);
           const radius = DOT_RADIUS + influence * 0.95;
 
           if (influence > 0.16) {
-            ctx.fillStyle = `rgba(220, 38, 38, ${alpha})`;
+            ctx.fillStyle = `rgba(166, 25, 46, ${alpha})`;
           } else if (wave > 0.65) {
-            ctx.fillStyle = `rgba(185, 28, 28, ${alpha * 0.9})`;
+            ctx.fillStyle = `rgba(166, 25, 46, ${alpha * 0.72})`;
           } else {
-            ctx.fillStyle = `rgba(120, 26, 26, ${alpha * 0.85})`;
+            ctx.fillStyle = `rgba(101, 93, 86, ${alpha * 0.52})`;
           }
 
           ctx.beginPath();
@@ -217,8 +217,8 @@ export const InteractiveGridBackground: React.FC<InteractiveGridBackgroundProps>
       <canvas ref={canvasRef} className="block h-full w-full" />
       {/* Restrained 5% noise texture overlay */}
       <div className="film-grain pointer-events-none absolute inset-0 opacity-[0.05]" />
-      {/* Vignette to keep edges obsidian */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_38%,#0C0C0C_92%)]" />
+      {/* Vignette to keep edges warm ivory */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_38%,#F7F4ED_92%)]" />
     </div>
   );
 };

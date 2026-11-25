@@ -59,8 +59,8 @@ export const NotchNavbar: React.FC = () => {
         aria-label="Primary Navigation"
         className={`pointer-events-auto relative flex w-full max-w-[1220px] items-center justify-between border-x border-b transition-all duration-300 ${
           scrolled
-            ? 'border-[#F5F1E8]/15 bg-[#0C0C0C]/92 shadow-[0_14px_40px_rgba(0,0,0,0.75)] backdrop-blur-md'
-            : 'border-[#F5F1E8]/10 bg-[#0C0C0C]/78 backdrop-blur-sm'
+            ? 'border-[#302B28]/14 bg-[#F7F4ED]/95 shadow-[0_12px_36px_rgba(48,43,40,0.1)] backdrop-blur-md'
+            : 'border-[#302B28]/10 bg-[#FFFFFF]/82 shadow-[0_8px_24px_rgba(48,43,40,0.05)] backdrop-blur-sm'
         } px-6 py-3 sm:px-8`}
         style={{
           clipPath:
@@ -70,15 +70,15 @@ export const NotchNavbar: React.FC = () => {
         {/* Subtle top crimson accent line */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#B91C1C]/80 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#A6192E]/85 to-transparent"
         />
 
         {/* Brand Wordmark */}
         <a
           href="#home"
-          className="inline-flex items-center gap-2.5 font-display text-xl font-extrabold uppercase tracking-[0.24em] text-[#F5F1E8] transition-colors hover:text-[#DC2626]"
+          className="inline-flex items-center gap-2.5 font-display text-xl font-extrabold uppercase tracking-[0.24em] text-[#302B28] transition-colors hover:text-[#A6192E]"
         >
-          <span className="h-2 w-2 bg-[#B91C1C]" aria-hidden="true" />
+          <span className="h-2 w-2 bg-[#A6192E]" aria-hidden="true" />
           <span>{SITE_CONFIG.brand.wordmark}</span>
         </a>
 
@@ -93,8 +93,8 @@ export const NotchNavbar: React.FC = () => {
                   aria-current={isActive ? 'page' : undefined}
                   className={`relative inline-flex items-center px-3.5 py-1.5 font-display text-sm font-semibold uppercase tracking-[0.18em] transition-colors ${
                     isActive
-                      ? 'text-[#F5F1E8]'
-                      : 'text-[#F5F1E8]/60 hover:text-[#F5F1E8]'
+                      ? 'text-[#302B28]'
+                      : 'text-[#655D56] hover:text-[#302B28]'
                   }`}
                 >
                   <span>{item.label}</span>
@@ -102,7 +102,7 @@ export const NotchNavbar: React.FC = () => {
                     <motion.span
                       layoutId="notch-active-indicator"
                       transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                      className="absolute inset-x-3 -bottom-1 h-[2px] bg-[#B91C1C]"
+                      className="absolute inset-x-3 -bottom-1 h-[2px] bg-[#A6192E]"
                     />
                   )}
                 </a>
@@ -115,7 +115,7 @@ export const NotchNavbar: React.FC = () => {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden sm:inline-flex items-center border border-[#B91C1C]/70 bg-[#B91C1C]/15 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#F5F1E8] transition-colors hover:border-[#DC2626] hover:bg-[#B91C1C]"
+            className="hidden sm:inline-flex items-center border border-[#A6192E] bg-[#A6192E]/10 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#302B28] transition-colors hover:bg-[#A6192E] hover:text-[#FFFFFF]"
           >
             Get in Touch
           </a>
@@ -126,7 +126,7 @@ export const NotchNavbar: React.FC = () => {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-drawer"
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="inline-flex h-9 w-9 items-center justify-center border border-[#F5F1E8]/15 bg-[#141414] text-[#F5F1E8] transition-colors hover:border-[#B91C1C] lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center border border-[#302B28]/18 bg-[#FFFFFF] text-[#302B28] transition-colors hover:border-[#A6192E] lg:hidden"
           >
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -137,9 +137,9 @@ export const NotchNavbar: React.FC = () => {
       {mobileOpen && (
         <div
           id="mobile-nav-drawer"
-          className="pointer-events-auto absolute inset-x-3 top-[62px] border border-[#F5F1E8]/15 bg-[#0C0C0C]/98 p-5 shadow-2xl backdrop-blur-md lg:hidden"
+          className="pointer-events-auto absolute inset-x-3 top-[62px] border border-[#302B28]/15 bg-[#F7F4ED]/98 p-5 shadow-[0_20px_48px_rgba(48,43,40,0.16)] backdrop-blur-md lg:hidden"
         >
-          <ul className="flex flex-col divide-y divide-[#F5F1E8]/10">
+          <ul className="flex flex-col divide-y divide-[#302B28]/10">
             {SITE_CONFIG.navigation.map((item) => {
               const isActive = activeId === item.id;
               return (
@@ -148,11 +148,11 @@ export const NotchNavbar: React.FC = () => {
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
                     className={`flex items-center justify-between py-3.5 font-display text-lg font-bold uppercase tracking-[0.18em] ${
-                      isActive ? 'text-[#DC2626]' : 'text-[#F5F1E8]'
+                      isActive ? 'text-[#A6192E]' : 'text-[#302B28]'
                     }`}
                   >
                     <span>{item.label}</span>
-                    <span className="h-1.5 w-1.5 bg-[#B91C1C]" />
+                    <span className="h-1.5 w-1.5 bg-[#A6192E]" />
                   </a>
                 </li>
               );
@@ -161,7 +161,7 @@ export const NotchNavbar: React.FC = () => {
           <a
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="mt-4 flex w-full items-center justify-center border border-[#B91C1C] bg-[#B91C1C] py-3 font-display text-sm font-semibold uppercase tracking-[0.2em] text-[#F5F1E8]"
+            className="mt-4 flex w-full items-center justify-center border border-[#A6192E] bg-[#A6192E] py-3 font-display text-sm font-semibold uppercase tracking-[0.2em] text-[#FFFFFF]"
           >
             Get in Touch
           </a>

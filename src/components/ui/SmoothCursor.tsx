@@ -111,15 +111,15 @@ export const SmoothCursor: React.FC = () => {
         ringRef.current.style.transform = `translate3d(${currentX - currentSize / 2}px, ${currentY - currentSize / 2}px, 0)`;
 
         if (snap.overPortrait) {
-          ringRef.current.style.borderColor = 'rgba(220, 38, 38, 0.72)';
-          ringRef.current.style.backgroundColor = 'rgba(185, 28, 28, 0.05)';
-          ringRef.current.style.boxShadow = '0 0 28px rgba(185, 28, 28, 0.18)';
+          ringRef.current.style.borderColor = 'rgba(166, 25, 46, 0.78)';
+          ringRef.current.style.backgroundColor = 'rgba(166, 25, 46, 0.06)';
+          ringRef.current.style.boxShadow = '0 0 24px rgba(166, 25, 46, 0.14)';
         } else if (snap.overInteractive) {
-          ringRef.current.style.borderColor = 'rgba(245, 241, 232, 0.78)';
-          ringRef.current.style.backgroundColor = 'rgba(185, 28, 28, 0.14)';
+          ringRef.current.style.borderColor = 'rgba(48, 43, 40, 0.78)';
+          ringRef.current.style.backgroundColor = 'rgba(166, 25, 46, 0.1)';
           ringRef.current.style.boxShadow = 'none';
         } else {
-          ringRef.current.style.borderColor = 'rgba(245, 241, 232, 0.42)';
+          ringRef.current.style.borderColor = 'rgba(48, 43, 40, 0.42)';
           ringRef.current.style.backgroundColor = 'transparent';
           ringRef.current.style.boxShadow = 'none';
         }
@@ -160,7 +160,7 @@ export const SmoothCursor: React.FC = () => {
       >
         <span
           ref={labelRef}
-          className="mb-2.5 select-none font-display text-[10px] uppercase tracking-[0.22em] text-[#F5F1E8]/75 transition-opacity duration-200"
+          className="mb-2.5 select-none font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-[#302B28]/80 transition-opacity duration-200"
           style={{ opacity: 0 }}
         >
           WITHIN
@@ -168,7 +168,7 @@ export const SmoothCursor: React.FC = () => {
       </div>
       <div
         ref={dotRef}
-        className="fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-[#DC2626] will-change-transform"
+        className="fixed left-0 top-0 h-1.5 w-1.5 rounded-full bg-[#A6192E] will-change-transform"
         style={{ opacity: 0 }}
       />
     </div>

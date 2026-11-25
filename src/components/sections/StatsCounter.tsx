@@ -37,9 +37,9 @@ const AnimatedNumber: React.FC<{ item: StatItem; trigger: boolean }> = ({
   }, [trigger, item.value, prefersReducedMotion]);
 
   return (
-    <span className="font-display text-[clamp(3.6rem,7vw,6.2rem)] font-extrabold leading-none tracking-[-0.02em] text-[#F5F1E8]">
+    <span className="font-display text-[clamp(3.6rem,7vw,6.2rem)] font-extrabold leading-none tracking-[-0.02em] text-[#302B28]">
       {displayValue}
-      <span className="text-[#B91C1C]">{item.suffix}</span>
+      <span className="text-[#A6192E]">{item.suffix}</span>
     </span>
   );
 };
@@ -74,31 +74,31 @@ export const StatsCounter: React.FC<{ demoMode: boolean }> = ({ demoMode }) => {
     <section
       id="impact"
       ref={sectionRef}
-      className="relative border-t border-[#F5F1E8]/10 bg-[#0E0E0E] pt-[var(--section-py)] pb-14"
+      className="relative border-t border-[#302B28]/12 bg-[#E8E0D3] pt-[var(--section-py)] pb-14"
     >
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#B91C1C]">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#A6192E]">
             {stats.chapterLabel}
           </span>
-          <span className="border border-[#C5A059]/45 bg-[#C5A059]/10 px-3 py-1 font-display text-xs uppercase tracking-[0.18em] text-[#C5A059]">
+          <span className="border border-[#B89B63]/55 bg-[#FFFFFF]/80 px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
             {stats.demoBadge}
           </span>
         </div>
 
-        <h2 className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-[#F5F1E8] sm:text-4xl">
+        <h2 className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-[#302B28] sm:text-4xl">
           {stats.heading}
         </h2>
 
         {/* Editorial Divided Stat Strip (No excessive SaaS cards) */}
-        <div className="mt-10 grid grid-cols-1 divide-y divide-[#F5F1E8]/12 border-y border-[#F5F1E8]/15 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div className="mt-10 grid grid-cols-1 divide-y divide-[#302B28]/14 border-y border-[#302B28]/18 md:grid-cols-3 md:divide-x md:divide-y-0">
           {stats.items.map((item) => (
             <div key={item.id} className="py-8 md:px-8 md:first:pl-0 md:last:pr-0">
               <AnimatedNumber item={item} trigger={hasEntered} />
-              <p className="mt-3 font-display text-xl font-bold uppercase tracking-[0.08em] text-[#F5F1E8]">
+              <p className="mt-3 font-display text-xl font-bold uppercase tracking-[0.08em] text-[#302B28]">
                 {item.label}
               </p>
-              <p className="mt-1.5 text-xs text-[#C5A059]/80">{item.detail}</p>
+              <p className="mt-1.5 text-xs text-[#655D56]">{item.detail}</p>
             </div>
           ))}
         </div>

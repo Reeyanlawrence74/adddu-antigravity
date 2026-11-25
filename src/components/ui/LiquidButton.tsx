@@ -26,23 +26,23 @@ const VARIANT_STYLES: Record<
   {
     base: string;
     wave: string;
-    hoverText: string;
+    text: string;
   }
 > = {
   crimson: {
-    base: 'border-[#B91C1C] bg-[#B91C1C]/15 text-[#F5F1E8]',
-    wave: 'bg-[#B91C1C]',
-    hoverText: 'group-hover:text-[#F5F1E8]',
+    base: 'border-[#A6192E] bg-[#A6192E]',
+    wave: 'bg-[#7C1020]',
+    text: 'text-[#FFFFFF] group-hover:text-[#FFFFFF]',
   },
   ivory: {
-    base: 'border-[#F5F1E8]/40 bg-transparent text-[#F5F1E8]',
-    wave: 'bg-[#F5F1E8]',
-    hoverText: 'group-hover:text-[#0C0C0C]',
+    base: 'border-[#302B28]/35 bg-[#FFFFFF] hover:border-[#A6192E]',
+    wave: 'bg-[#A6192E]',
+    text: 'text-[#302B28] group-hover:text-[#FFFFFF]',
   },
   charcoal: {
-    base: 'border-[#F5F1E8]/20 bg-[#292929]/70 text-[#F5F1E8]',
-    wave: 'bg-[#DC2626]',
-    hoverText: 'group-hover:text-[#F5F1E8]',
+    base: 'border-[#302B28]/25 bg-[#E8E0D3] hover:border-[#A6192E]',
+    wave: 'bg-[#A6192E]',
+    text: 'text-[#302B28] group-hover:text-[#FFFFFF]',
   },
 };
 
@@ -60,19 +60,19 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
       {/* Liquid fill rising organically on hover */}
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-[-15%] bottom-[-140%] h-[220%] rounded-[42%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-[52%] group-hover:rotate-[4deg] ${styles.wave}`}
+        className={`pointer-events-none absolute inset-x-[-15%] bottom-[-228%] h-[220%] rounded-[42%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-[84%] group-hover:rotate-[4deg] ${styles.wave}`}
       />
       <span
         aria-hidden="true"
-        className={`pointer-events-none absolute inset-x-[-20%] bottom-[-155%] h-[220%] rounded-[38%] opacity-60 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-[56%] group-hover:-rotate-[6deg] ${styles.wave}`}
+        className={`pointer-events-none absolute inset-x-[-20%] bottom-[-242%] h-[220%] rounded-[38%] opacity-65 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-[88%] group-hover:-rotate-[6deg] ${styles.wave}`}
       />
       {/* Subtle top specular rim */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#F5F1E8]/35 to-transparent"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#FFFFFF]/65 to-transparent"
       />
       <span
-        className={`relative z-10 inline-flex items-center gap-3 font-display text-base font-semibold uppercase tracking-[0.16em] transition-colors duration-300 ${styles.hoverText}`}
+        className={`relative z-10 inline-flex items-center gap-3 font-display text-base font-semibold uppercase tracking-[0.16em] transition-colors duration-200 ${styles.text}`}
       >
         <span>{children}</span>
         {icon && (
@@ -84,7 +84,7 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
     </>
   );
 
-  const sharedClasses = `group relative inline-flex items-center justify-center overflow-hidden border px-7 py-3.5 transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[#DC2626] focus-visible:outline-offset-3 ${styles.base} ${className}`;
+  const sharedClasses = `group relative inline-flex items-center justify-center overflow-hidden border px-7 py-3.5 shadow-[0_8px_22px_rgba(48,43,40,0.06)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[#A6192E] focus-visible:outline-offset-3 ${styles.base} ${className}`;
 
   if ('href' in props && props.href !== undefined) {
     const { href, ...anchorRest } = props as AnchorProps;

@@ -17,20 +17,20 @@ export const AchievementSection: React.FC<{ demoMode: boolean }> = ({ demoMode }
   return (
     <section
       id="achievements"
-      className="relative border-t border-[#F5F1E8]/10 bg-[#0F0F0F] py-[var(--section-py)]"
+      className="relative border-t border-[#302B28]/12 bg-[#E8E0D3] py-[var(--section-py)]"
     >
-      {/* Restrained muted-gold radial ambient glow */}
+      {/* Restrained champagne-gold radial ambient glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 top-1/4 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(197,160,89,0.08),transparent_70%)]"
+        className="pointer-events-none absolute right-0 top-1/4 h-[460px] w-[460px] rounded-full bg-[radial-gradient(circle,rgba(184,155,99,0.16),transparent_70%)]"
       />
 
       <div className="relative mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="mb-10 flex items-center gap-4">
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#C5A059]">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#8E6F38]">
             {champion.chapterLabel}
           </span>
-          <span className="h-px flex-1 bg-[#C5A059]/25" aria-hidden="true" />
+          <span className="h-px flex-1 bg-[#B89B63]/45" aria-hidden="true" />
         </div>
 
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-14">
@@ -41,15 +41,15 @@ export const AchievementSection: React.FC<{ demoMode: boolean }> = ({ demoMode }
               mode="blur-focus"
               lines={champion.headingLines}
               accentLastLine
-              className="font-display text-[clamp(3.2rem,6.4vw,5.8rem)] font-extrabold uppercase leading-[0.88] text-[#F5F1E8]"
+              className="font-display text-[clamp(3.2rem,6.4vw,5.8rem)] font-extrabold uppercase leading-[0.88] text-[#302B28]"
             />
 
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-[#F5F1E8]/72 sm:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-[#655D56] sm:text-lg">
               {champion.lead}
             </p>
 
             {/* Configurable Achievement & Credential Rows */}
-            <div className="mt-10 divide-y divide-[#F5F1E8]/12 border-y border-[#F5F1E8]/12">
+            <div className="mt-10 divide-y divide-[#302B28]/14 border-y border-[#302B28]/14">
               {visibleFields.length > 0 ? (
                 visibleFields.map((field) => (
                   <div
@@ -57,30 +57,30 @@ export const AchievementSection: React.FC<{ demoMode: boolean }> = ({ demoMode }
                     className="flex flex-col gap-2 py-5 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
                   >
                     <div className="flex items-center gap-2.5 sm:w-64 sm:shrink-0">
-                      <Award className="h-4 w-4 shrink-0 text-[#C5A059]" aria-hidden="true" />
-                      <span className="font-display text-base font-bold uppercase tracking-[0.08em] text-[#F5F1E8]">
+                      <Award className="h-4 w-4 shrink-0 text-[#B89B63]" aria-hidden="true" />
+                      <span className="font-display text-base font-bold uppercase tracking-[0.08em] text-[#302B28]">
                         {field.label}
                       </span>
                     </div>
 
                     <div className="flex-1">
-                      <p className="text-sm leading-relaxed text-[#F5F1E8]/80">
+                      <p className="text-sm leading-relaxed text-[#302B28]">
                         {field.value}
                       </p>
                       {field.note && (
-                        <p className="mt-1 text-xs text-[#C5A059]/75">{field.note}</p>
+                        <p className="mt-1 text-xs text-[#655D56]">{field.note}</p>
                       )}
                     </div>
 
                     {field.pending && (
-                      <span className="self-start border border-[#C5A059]/40 bg-[#C5A059]/10 px-2.5 py-0.5 font-display text-[11px] uppercase tracking-[0.16em] text-[#C5A059]">
+                      <span className="self-start border border-[#B89B63]/60 bg-[#FFFFFF]/80 px-2.5 py-0.5 font-display text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8E6F38]">
                         Pending Details
                       </span>
                     )}
                   </div>
                 ))
               ) : (
-                <div className="py-6 text-sm text-[#F5F1E8]/60">
+                <div className="py-6 text-sm text-[#655D56]">
                   Verified competition records and officiating credentials will appear here once published.
                 </div>
               )}
@@ -108,17 +108,17 @@ export const AchievementSection: React.FC<{ demoMode: boolean }> = ({ demoMode }
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5"
           >
-            <div className="border border-[#C5A059]/25 bg-[#141414] p-3">
+            <div className="border border-[#B89B63]/45 bg-[#FFFFFF] p-3 shadow-[0_18px_48px_rgba(48,43,40,0.08)]">
               <AssetFrame
                 asset={ASSET_MANIFEST.championMedal}
                 fallbackTitle="Authentic Medal Photograph"
                 fallbackSubtitle="Photograph of Aditya holding his medal while wearing the team jacket. Also serves as the reserved trophy feature slot until an authentic trophy photo is supplied."
               />
-              <div className="mt-3 flex items-center justify-between border-t border-[#F5F1E8]/10 pt-3 text-xs">
-                <span className="font-display uppercase tracking-[0.18em] text-[#C5A059]">
+              <div className="mt-3 flex items-center justify-between border-t border-[#302B28]/12 pt-3 text-xs">
+                <span className="font-display font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
                   Medal & Reserved Trophy Slot
                 </span>
-                <span className="text-[#F5F1E8]/45">Configurable Visual</span>
+                <span className="text-[#655D56]">Configurable Visual</span>
               </div>
             </div>
           </motion.div>
