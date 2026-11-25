@@ -112,7 +112,7 @@ export const WaveGridBackground: React.FC<WaveGridBackgroundProps> = ({
         updateTrail(deltaSec);
       }
 
-      // Warm Ivory & subtle Soft Beige center wash behind portrait
+      // Arctic White & subtle Glacier Blue center wash behind portrait
       const spotlight = ctx.createRadialGradient(
         width * 0.5,
         height * 0.48,
@@ -121,9 +121,9 @@ export const WaveGridBackground: React.FC<WaveGridBackgroundProps> = ({
         height * 0.48,
         Math.max(width, height) * 0.52
       );
-      spotlight.addColorStop(0, 'rgba(232, 224, 211, 0.52)');
-      spotlight.addColorStop(0.45, 'rgba(166, 25, 46, 0.035)');
-      spotlight.addColorStop(1, 'rgba(247, 244, 237, 0)');
+      spotlight.addColorStop(0, 'rgba(212, 232, 240, 0.58)');
+      spotlight.addColorStop(0.45, 'rgba(38, 169, 199, 0.045)');
+      spotlight.addColorStop(1, 'rgba(240, 247, 250, 0)');
       ctx.fillStyle = spotlight;
       ctx.fillRect(0, 0, width, height);
 
@@ -176,25 +176,25 @@ export const WaveGridBackground: React.FC<WaveGridBackgroundProps> = ({
           const elevation = clamped * 4.5;
           const drawY = baseY - elevation;
 
-          // Base Warm Ivory / Soft Beige tile border
-          const strokeAlpha = 0.065 + positivePeak * 0.19;
+          // Base Arctic White / Glacier Blue tile border
+          const strokeAlpha = 0.07 + positivePeak * 0.22;
           if (positivePeak > 0.06) {
-            // Subtle Soft Beige drop shadow beneath elevated tile
-            ctx.fillStyle = `rgba(48, 43, 40, ${0.035 * positivePeak})`;
+            // Subtle cool shadow beneath elevated tile
+            ctx.fillStyle = `rgba(18, 51, 68, ${0.04 * positivePeak})`;
             ctx.fillRect(baseX + 1.5, baseY + 2.5, tileSize, tileSize);
 
-            // Soft Beige to restrained Japanese Crimson crest fill
-            const crimsonAlpha = Math.min(0.18, positivePeak * 0.18);
-            const beigeAlpha = Math.min(0.42, positivePeak * 0.35);
-            ctx.fillStyle = `rgba(232, 224, 211, ${beigeAlpha})`;
+            // Glacier Blue to restrained Deep Ocean / Electric Cyan crest fill
+            const oceanAlpha = Math.min(0.16, positivePeak * 0.16);
+            const glacierAlpha = Math.min(0.48, positivePeak * 0.4);
+            ctx.fillStyle = `rgba(212, 232, 240, ${glacierAlpha})`;
             ctx.fillRect(baseX, drawY, tileSize, tileSize);
 
-            ctx.fillStyle = `rgba(166, 25, 46, ${crimsonAlpha})`;
+            ctx.fillStyle = `rgba(38, 169, 199, ${oceanAlpha})`;
             ctx.fillRect(baseX, drawY, tileSize, tileSize);
 
-            ctx.strokeStyle = `rgba(166, 25, 46, ${strokeAlpha})`;
+            ctx.strokeStyle = `rgba(0, 107, 150, ${strokeAlpha})`;
           } else {
-            ctx.strokeStyle = `rgba(48, 43, 40, ${strokeAlpha})`;
+            ctx.strokeStyle = `rgba(18, 51, 68, ${strokeAlpha})`;
           }
 
           ctx.lineWidth = 1;
@@ -287,8 +287,8 @@ export const WaveGridBackground: React.FC<WaveGridBackgroundProps> = ({
       className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
     >
       <canvas ref={canvasRef} className="block h-full w-full" />
-      {/* Restrained warm vignette blending grid edges seamlessly into Warm Ivory (#F7F4ED) */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_36%,#F7F4ED_94%)]" />
+      {/* Restrained cool vignette blending grid edges seamlessly into Arctic White (#F0F7FA) */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_46%,transparent_36%,#F0F7FA_94%)]" />
     </div>
   );
 };

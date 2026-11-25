@@ -30,19 +30,19 @@ const VARIANT_STYLES: Record<
   }
 > = {
   crimson: {
-    base: 'border-[#A6192E] bg-[#A6192E]',
-    wave: 'bg-[#7C1020]',
+    base: 'border-[#006B96] bg-[#006B96] hover:border-[#26A9C7]',
+    wave: 'bg-[#004D6D]',
     text: 'text-[#FFFFFF] group-hover:text-[#FFFFFF]',
   },
   ivory: {
-    base: 'border-[#302B28]/35 bg-[#FFFFFF] hover:border-[#A6192E]',
-    wave: 'bg-[#A6192E]',
-    text: 'text-[#302B28] group-hover:text-[#FFFFFF]',
+    base: 'border-[#123344]/30 bg-[#FFFFFF] hover:border-[#006B96]',
+    wave: 'bg-[#006B96]',
+    text: 'text-[#123344] group-hover:text-[#FFFFFF]',
   },
   charcoal: {
-    base: 'border-[#302B28]/25 bg-[#E8E0D3] hover:border-[#A6192E]',
-    wave: 'bg-[#A6192E]',
-    text: 'text-[#302B28] group-hover:text-[#FFFFFF]',
+    base: 'border-[#123344]/22 bg-[#D4E8F0] hover:border-[#006B96]',
+    wave: 'bg-[#006B96]',
+    text: 'text-[#123344] group-hover:text-[#FFFFFF]',
   },
 };
 
@@ -84,7 +84,7 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
     </>
   );
 
-  const sharedClasses = `group relative inline-flex items-center justify-center overflow-hidden border px-7 py-3.5 shadow-[0_8px_22px_rgba(48,43,40,0.06)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[#A6192E] focus-visible:outline-offset-3 ${styles.base} ${className}`;
+  const sharedClasses = `group relative inline-flex items-center justify-center overflow-hidden border px-7 py-3.5 shadow-[0_8px_22px_rgba(18,51,68,0.08)] transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-[#006B96] focus-visible:outline-offset-3 ${styles.base} ${className}`;
 
   if ('href' in props && props.href !== undefined) {
     const { href, ...anchorRest } = props as AnchorProps;

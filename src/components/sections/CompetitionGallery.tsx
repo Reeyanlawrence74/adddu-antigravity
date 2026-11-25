@@ -78,7 +78,7 @@ export const CompetitionGallery: React.FC = () => {
   return (
     <section
       id="competitor"
-      className="relative border-t border-[#302B28]/12 bg-[#F7F4ED]"
+      className="relative border-t border-[#123344]/12 bg-[#F0F7FA]"
     >
       {/* DESKTOP STICKY + SCROLL-LINKED HORIZONTAL SEQUENCE */}
       <div
@@ -91,10 +91,10 @@ export const CompetitionGallery: React.FC = () => {
             {/* Sticky Left Portrait: Back-facing IASK-DO INDIA Jacket */}
             <div className="col-span-5 flex flex-col">
               <div className="mb-3 flex items-center justify-between">
-                <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#A6192E]">
+                <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#006B96]">
                   {competitor.chapterLabel}
                 </span>
-                <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
+                <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#26A9C7]">
                   IASK-DO INDIA
                 </span>
               </div>
@@ -106,7 +106,7 @@ export const CompetitionGallery: React.FC = () => {
                 className="max-h-[60vh] w-full"
               />
 
-              <p className="mt-3 text-xs text-[#655D56]">
+              <p className="mt-3 text-xs text-[#526D7A]">
                 {competitor.jacketNotice}
               </p>
             </div>
@@ -120,23 +120,23 @@ export const CompetitionGallery: React.FC = () => {
                     mode="tracking-settle"
                     lines={competitor.headingLines}
                     accentLastLine
-                    className="font-display text-[clamp(2.5rem,4.2vw,3.9rem)] font-extrabold uppercase leading-[0.88] text-[#302B28]"
+                    className="font-display text-[clamp(2.5rem,4.2vw,3.9rem)] font-extrabold uppercase leading-[0.88] text-[#123344]"
                   />
-                  <p className="mt-2.5 max-w-xl text-sm leading-relaxed text-[#655D56]">
+                  <p className="mt-2.5 max-w-xl text-sm leading-relaxed text-[#526D7A]">
                     {competitor.subtitle}
                   </p>
                 </div>
 
                 {/* Minimal Gallery Progress Indicator */}
                 <div className="shrink-0 text-right">
-                  <span className="font-display text-2xl font-bold tracking-[0.12em] text-[#302B28]">
+                  <span className="font-display text-2xl font-bold tracking-[0.12em] text-[#123344]">
                     0{activeSlideIndex + 1}
-                    <span className="text-[#655D56]/60"> / 0{competitor.slides.length}</span>
+                    <span className="text-[#526D7A]/60"> / 0{competitor.slides.length}</span>
                   </span>
-                  <div className="mt-2 h-[2px] w-28 overflow-hidden bg-[#302B28]/15">
+                  <div className="mt-2 h-[2px] w-28 overflow-hidden bg-[#123344]/15">
                     <motion.div
                       style={{ scaleX: progressScale, transformOrigin: 'left' }}
-                      className="h-full w-full bg-[#A6192E]"
+                      className="h-full w-full bg-[#006B96]"
                     />
                   </div>
                 </div>
@@ -152,7 +152,7 @@ export const CompetitionGallery: React.FC = () => {
                   {competitor.slides.map((slide) => (
                     <article
                       key={slide.index}
-                      className="flex w-[330px] xl:w-[360px] shrink-0 flex-col border border-[#302B28]/12 bg-[#FFFFFF] p-3.5 shadow-[0_14px_34px_rgba(48,43,40,0.06)]"
+                      className="flex w-[330px] xl:w-[360px] shrink-0 flex-col border border-[#123344]/12 bg-[#FFFFFF] p-3.5 shadow-[0_14px_34px_rgba(18,51,68,0.07)]"
                     >
                       <AssetFrame
                         asset={ASSET_MANIFEST[slide.assetKey]}
@@ -160,13 +160,13 @@ export const CompetitionGallery: React.FC = () => {
                         className="max-h-[340px] w-full"
                       />
                       <div className="mt-4 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.2em]">
-                        <span className="text-[#8E6F38]">{slide.eyebrow}</span>
-                        <span className="text-[#655D56]">{slide.index}</span>
+                        <span className="text-[#006B96]">{slide.eyebrow}</span>
+                        <span className="text-[#526D7A]">{slide.index}</span>
                       </div>
-                      <h3 className="mt-1.5 font-display text-2xl font-bold uppercase tracking-[0.04em] text-[#302B28]">
+                      <h3 className="mt-1.5 font-display text-2xl font-bold uppercase tracking-[0.04em] text-[#123344]">
                         {slide.title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[#655D56]">
+                      <p className="mt-2 text-sm leading-relaxed text-[#526D7A]">
                         {slide.body}
                       </p>
                     </article>
@@ -180,7 +180,7 @@ export const CompetitionGallery: React.FC = () => {
 
       {/* MOBILE / TABLET CLEAN VERTICAL + SWIPEABLE SEQUENCE */}
       <div className="px-5 py-16 sm:px-8 lg:hidden">
-        <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#A6192E]">
+        <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#006B96]">
           {competitor.chapterLabel}
         </span>
 
@@ -189,10 +189,10 @@ export const CompetitionGallery: React.FC = () => {
           mode="tracking-settle"
           lines={competitor.headingLines}
           accentLastLine
-          className="mt-3 font-display text-5xl font-extrabold uppercase leading-[0.88] text-[#302B28]"
+          className="mt-3 font-display text-5xl font-extrabold uppercase leading-[0.88] text-[#123344]"
         />
 
-        <p className="mt-4 text-sm leading-relaxed text-[#655D56]">
+        <p className="mt-4 text-sm leading-relaxed text-[#526D7A]">
           {competitor.subtitle}
         </p>
 
@@ -202,7 +202,7 @@ export const CompetitionGallery: React.FC = () => {
             fallbackTitle="IASK-DO INDIA — Back Portrait"
             fallbackSubtitle="Authentic back-facing photograph of Aditya wearing the white, blue, and black IASK-DO INDIA team jacket."
           />
-          <p className="mt-2.5 text-xs text-[#655D56]">{competitor.jacketNotice}</p>
+          <p className="mt-2.5 text-xs text-[#526D7A]">{competitor.jacketNotice}</p>
         </div>
 
         {/* Accessible horizontal swipe strip */}
@@ -213,20 +213,20 @@ export const CompetitionGallery: React.FC = () => {
           {competitor.slides.map((slide) => (
             <article
               key={slide.index}
-              className="w-[82vw] max-w-[340px] shrink-0 snap-start border border-[#302B28]/12 bg-[#FFFFFF] p-3.5 shadow-[0_12px_28px_rgba(48,43,40,0.06)]"
+              className="w-[82vw] max-w-[340px] shrink-0 snap-start border border-[#123344]/12 bg-[#FFFFFF] p-3.5 shadow-[0_12px_28px_rgba(18,51,68,0.07)]"
             >
               <AssetFrame
                 asset={ASSET_MANIFEST[slide.assetKey]}
                 badgeText={slide.badge}
               />
               <div className="mt-3 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.2em]">
-                <span className="text-[#8E6F38]">{slide.eyebrow}</span>
-                <span className="text-[#655D56]">{slide.index}</span>
+                <span className="text-[#006B96]">{slide.eyebrow}</span>
+                <span className="text-[#526D7A]">{slide.index}</span>
               </div>
-              <h3 className="mt-1 font-display text-2xl font-bold uppercase text-[#302B28]">
+              <h3 className="mt-1 font-display text-2xl font-bold uppercase text-[#123344]">
                 {slide.title}
               </h3>
-              <p className="mt-1.5 text-sm leading-relaxed text-[#655D56]">
+              <p className="mt-1.5 text-sm leading-relaxed text-[#526D7A]">
                 {slide.body}
               </p>
             </article>

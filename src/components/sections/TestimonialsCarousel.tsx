@@ -70,7 +70,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
   return (
     <section
       aria-label="Sample student and parent testimonials"
-      className="relative bg-[#E8E0D3] pb-[var(--section-py)] pt-8"
+      className="relative bg-[#D4E8F0] pb-[var(--section-py)] pt-8"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={() => setIsPaused(true)}
@@ -81,10 +81,10 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
         {/* Header Bar */}
         <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <span className="inline-block border border-[#B89B63]/55 bg-[#FFFFFF]/80 px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
+            <span className="inline-block border border-[#006B96]/35 bg-[#FFFFFF]/85 px-3 py-1 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#006B96]">
               Sample Testimonials — Demo Content
             </span>
-            <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-[#302B28] sm:text-4xl">
+            <h3 className="mt-3 font-display text-3xl font-bold uppercase tracking-[0.03em] text-[#123344] sm:text-4xl">
               Perspectives From the Mat
             </h3>
           </div>
@@ -94,7 +94,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
               type="button"
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="inline-flex h-11 w-11 items-center justify-center border border-[#302B28]/20 bg-[#FFFFFF] text-[#302B28] transition-colors hover:border-[#A6192E] hover:bg-[#A6192E] hover:text-[#FFFFFF]"
+              className="inline-flex h-11 w-11 items-center justify-center border border-[#123344]/20 bg-[#FFFFFF] text-[#123344] transition-colors hover:border-[#006B96] hover:bg-[#006B96] hover:text-[#FFFFFF]"
             >
               <ChevronLeft className="h-5 w-5" />
             </button>
@@ -102,7 +102,7 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
               type="button"
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="inline-flex h-11 w-11 items-center justify-center border border-[#302B28]/20 bg-[#FFFFFF] text-[#302B28] transition-colors hover:border-[#A6192E] hover:bg-[#A6192E] hover:text-[#FFFFFF]"
+              className="inline-flex h-11 w-11 items-center justify-center border border-[#123344]/20 bg-[#FFFFFF] text-[#123344] transition-colors hover:border-[#006B96] hover:bg-[#006B96] hover:text-[#FFFFFF]"
             >
               <ChevronRight className="h-5 w-5" />
             </button>
@@ -139,26 +139,26 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                 className="shrink-0 px-2.5 first:pl-0 last:pr-0"
                 style={{ width: `${100 / visibleCount}%` }}
               >
-                <article className="flex h-full flex-col justify-between border border-[#302B28]/12 bg-[#FFFFFF] p-6 shadow-[0_12px_32px_rgba(48,43,40,0.06)]">
+                <article className="flex h-full flex-col justify-between border border-[#123344]/12 bg-[#FFFFFF] p-6 shadow-[0_12px_32px_rgba(18,51,68,0.07)]">
                   <div>
                     {/* Reviewer Initials + Perspective Header */}
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center border border-[#B89B63]/55 bg-[#F7F4ED] font-display text-sm font-bold tracking-[0.08em] text-[#302B28]">
+                        <div className="flex h-10 w-10 items-center justify-center border border-[#26A9C7]/45 bg-[#F0F7FA] font-display text-sm font-bold tracking-[0.08em] text-[#123344]">
                           {item.initials}
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-[#302B28]">
+                          <p className="text-sm font-semibold text-[#123344]">
                             {item.authorLabel}
                           </p>
-                          <p className="text-xs text-[#655D56]">
+                          <p className="text-xs text-[#526D7A]">
                             {item.perspective} · {item.timeframe}
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    {/* Champagne Gold Star Rating */}
+                    {/* Conventional Gold Star Rating preserved for recognition */}
                     <div
                       className="mt-4 flex items-center gap-1"
                       aria-label={`${item.rating} out of 5 stars`}
@@ -168,20 +168,20 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                           key={starIdx}
                           className={`h-3.5 w-3.5 ${
                             starIdx < item.rating
-                              ? 'fill-[#B89B63] text-[#B89B63]'
-                              : 'text-[#302B28]/20'
+                              ? 'fill-[#D4A62A] text-[#D4A62A]'
+                              : 'text-[#123344]/20'
                           }`}
                           aria-hidden="true"
                         />
                       ))}
                     </div>
 
-                    <p className="mt-4 text-sm leading-[1.72] text-[#302B28]/88">
+                    <p className="mt-4 text-sm leading-[1.72] text-[#123344]/88">
                       “{item.quote}”
                     </p>
                   </div>
 
-                  <div className="mt-6 border-t border-[#302B28]/10 pt-3 text-[11px] uppercase tracking-[0.16em] text-[#655D56]">
+                  <div className="mt-6 border-t border-[#123344]/10 pt-3 text-[11px] uppercase tracking-[0.16em] text-[#526D7A]">
                     Demo Perspective — Not a live Google review
                   </div>
                 </article>
@@ -203,13 +203,13 @@ export const TestimonialsCarousel: React.FC<{ demoMode: boolean }> = ({
                 onClick={() => setActiveIndex(idx)}
                 className={`h-1.5 transition-all ${
                   activeIndex === idx
-                    ? 'w-8 bg-[#A6192E]'
-                    : 'w-3 bg-[#302B28]/20 hover:bg-[#302B28]/45'
+                    ? 'w-8 bg-[#006B96]'
+                    : 'w-3 bg-[#123344]/20 hover:bg-[#123344]/45'
                 }`}
               />
             ))}
           </div>
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#655D56]">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#526D7A]">
             {activeIndex + 1} / {maxIndex + 1}
           </span>
         </div>

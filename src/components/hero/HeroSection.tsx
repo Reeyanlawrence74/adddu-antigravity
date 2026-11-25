@@ -13,9 +13,9 @@ export const HeroSection: React.FC = () => {
     <section
       id="home"
       ref={heroRef}
-      className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#F7F4ED] pt-24 pb-8 sm:pt-28 sm:pb-10"
+      className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#F0F7FA] pt-24 pb-8 sm:pt-28 sm:pb-10"
     >
-      {/* Interactive Ivory & Crimson Wave Grid Background */}
+      {/* Interactive Arctic & Ocean Wave Grid Background */}
       <WaveGridBackground containerRef={heroRef} />
 
       {/* Subtle oversized atmospheric backdrop typography (strictly behind portrait, never over face) */}
@@ -23,7 +23,7 @@ export const HeroSection: React.FC = () => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2 select-none overflow-hidden text-center"
       >
-        <span className="font-display text-[21vw] font-extrabold uppercase leading-[0.82] tracking-[-0.04em] text-[#302B28]/[0.04]">
+        <span className="font-display text-[21vw] font-extrabold uppercase leading-[0.82] tracking-[-0.04em] text-[#123344]/[0.04]">
           ADITYA
         </span>
       </div>
@@ -33,8 +33,8 @@ export const HeroSection: React.FC = () => {
         {/* LEFT SIDE: Narrative Identity & Primary Liquid CTA */}
         <div className="order-2 flex flex-col items-start lg:order-1 lg:col-span-4">
           <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#A6192E]" aria-hidden="true" />
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-[#302B28]">
+            <span className="h-px w-8 bg-[#006B96]" aria-hidden="true" />
+            <span className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-[#123344]">
               {SITE_CONFIG.brand.wordmark}
             </span>
           </div>
@@ -45,14 +45,14 @@ export const HeroSection: React.FC = () => {
             animateOnMount
             lines={SITE_CONFIG.brand.heroHeadline}
             accentLastLine
-            className="font-display text-[clamp(3.6rem,7.2vw,6.4rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.02em] text-[#302B28]"
+            className="font-display text-[clamp(3.6rem,7.2vw,6.4rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.02em] text-[#123344]"
           />
 
-          <p className="mt-5 max-w-sm text-base font-medium tracking-[0.04em] text-[#302B28]/85 sm:text-lg">
+          <p className="mt-5 max-w-sm text-base font-medium tracking-[0.04em] text-[#123344]/85 sm:text-lg">
             {SITE_CONFIG.brand.heroSubline}
           </p>
 
-          <p className="mt-2 max-w-sm text-xs font-semibold uppercase tracking-[0.22em] text-[#8E6F38]">
+          <p className="mt-2 max-w-sm text-xs font-semibold uppercase tracking-[0.22em] text-[#006B96]">
             {SITE_CONFIG.brand.narrative}
           </p>
 
@@ -74,16 +74,16 @@ export const HeroSection: React.FC = () => {
 
         {/* RIGHT SIDE: Interactive Discovery Cue */}
         <div className="order-3 flex flex-col items-start lg:col-span-3 lg:items-end lg:text-right">
-          <div className="border-l-2 border-[#A6192E] pl-4 lg:border-l-0 lg:border-r-2 lg:pl-0 lg:pr-4">
-            <p className="font-display text-2xl font-bold uppercase tracking-[0.14em] text-[#302B28] sm:text-3xl">
+          <div className="border-l-2 border-[#006B96] pl-4 lg:border-l-0 lg:border-r-2 lg:pl-0 lg:pr-4">
+            <p className="font-display text-2xl font-bold uppercase tracking-[0.14em] text-[#123344] sm:text-3xl">
               {SITE_CONFIG.brand.heroPromptTitle}
             </p>
-            <p className="mt-2.5 max-w-[260px] text-sm leading-relaxed text-[#655D56]">
+            <p className="mt-2.5 max-w-[260px] text-sm leading-relaxed text-[#526D7A]">
               {SITE_CONFIG.brand.heroPromptCopy}
             </p>
           </div>
 
-          <div className="mt-6 hidden flex-col items-end gap-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#655D56] lg:flex">
+          <div className="mt-6 hidden flex-col items-end gap-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#526D7A] lg:flex">
             <span>Forehead → Headband</span>
             <span>Eyes → Focus</span>
             <span>Chest → White Gi</span>
@@ -94,15 +94,15 @@ export const HeroSection: React.FC = () => {
 
       {/* Minimal Scroll Indicator */}
       <div className="relative z-10 mx-auto mt-6 flex w-full max-w-[1400px] items-center justify-between px-5 sm:px-8">
-        <span className="font-display text-[11px] font-semibold uppercase tracking-[0.26em] text-[#655D56]">
+        <span className="font-display text-[11px] font-semibold uppercase tracking-[0.26em] text-[#526D7A]">
           CHAPTER 01 — THE JUDGE
         </span>
         <a
           href="#about"
-          className="group inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.24em] text-[#302B28]/75 transition-colors hover:text-[#A6192E]"
+          className="group inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.24em] text-[#123344]/80 transition-colors hover:text-[#006B96]"
         >
           <span>Scroll</span>
-          <ArrowDown className="h-3.5 w-3.5 text-[#A6192E] transition-transform duration-300 group-hover:translate-y-1" />
+          <ArrowDown className="h-3.5 w-3.5 text-[#006B96] transition-transform duration-300 group-hover:translate-y-1" />
         </a>
       </div>
     </section>

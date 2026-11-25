@@ -39,7 +39,7 @@ const JourneyRow: React.FC<{ chapter: JourneyChapter; idx: number }> = ({ chapte
   return (
     <div
       ref={rowRef}
-      className="grid grid-cols-1 items-center gap-10 border-t border-[#302B28]/14 pt-14 lg:grid-cols-12 lg:gap-12"
+      className="grid grid-cols-1 items-center gap-10 border-t border-[#123344]/14 pt-14 lg:grid-cols-12 lg:gap-12"
     >
       {/* Visual Frame */}
       <motion.div
@@ -77,20 +77,20 @@ const JourneyRow: React.FC<{ chapter: JourneyChapter; idx: number }> = ({ chapte
         }`}
       >
         <div className="flex items-center gap-3">
-          <span className="font-display text-sm font-bold tracking-[0.22em] text-[#A6192E]">
+          <span className="font-display text-sm font-bold tracking-[0.22em] text-[#006B96]">
             {chapter.index}
           </span>
-          <span className="h-px w-8 bg-[#B89B63]/75" aria-hidden="true" />
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[#655D56]">
+          <span className="h-px w-8 bg-[#26A9C7]/75" aria-hidden="true" />
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.2em] text-[#526D7A]">
             {chapter.subtitle}
           </span>
         </div>
 
-        <h3 className="mt-4 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-bold uppercase leading-[0.95] text-[#302B28]">
+        <h3 className="mt-4 font-display text-[clamp(2.2rem,4vw,3.4rem)] font-bold uppercase leading-[0.95] text-[#123344]">
           {chapter.title}
         </h3>
 
-        <p className="mt-5 max-w-md text-base leading-[1.75] text-[#655D56]">
+        <p className="mt-5 max-w-md text-base leading-[1.75] text-[#526D7A]">
           {chapter.description}
         </p>
       </div>
@@ -104,19 +104,19 @@ export const JourneySection: React.FC = () => {
   return (
     <section
       id="journey"
-      className="relative border-t border-[#302B28]/12 bg-[#E8E0D3] py-[var(--section-py)]"
+      className="relative border-t border-[#123344]/12 bg-[#D4E8F0] py-[var(--section-py)]"
     >
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
         <div className="mb-10 flex items-center gap-4">
-          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#A6192E]">
+          <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#006B96]">
             {journey.chapterLabel}
           </span>
-          <span className="h-px flex-1 bg-[#302B28]/14" aria-hidden="true" />
+          <span className="h-px flex-1 bg-[#123344]/14" aria-hidden="true" />
         </div>
 
         <div className="mb-16 grid grid-cols-1 items-end gap-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <span className="mb-3 block font-display text-sm font-semibold uppercase tracking-[0.24em] text-[#8E6F38]">
+            <span className="mb-3 block font-display text-sm font-semibold uppercase tracking-[0.24em] text-[#006B96]">
               {journey.subheadings[0]}
             </span>
             <AnimatedHeading
@@ -124,11 +124,11 @@ export const JourneySection: React.FC = () => {
               mode="stagger-words"
               lines={journey.headingLines}
               accentLastLine
-              className="font-display text-[clamp(3.2rem,6.5vw,5.8rem)] font-extrabold uppercase leading-[0.88] text-[#302B28]"
+              className="font-display text-[clamp(3.2rem,6.5vw,5.8rem)] font-extrabold uppercase leading-[0.88] text-[#123344]"
             />
           </div>
           <div className="lg:col-span-4 lg:pb-2">
-            <p className="border-l-2 border-[#A6192E] pl-4 font-display text-lg font-semibold uppercase tracking-[0.14em] text-[#302B28]">
+            <p className="border-l-2 border-[#006B96] pl-4 font-display text-lg font-semibold uppercase tracking-[0.14em] text-[#123344]">
               {journey.subheadings[1]}
             </p>
           </div>

@@ -37,7 +37,7 @@ export const AssetFrame: React.FC<AssetFrameProps> = ({
 
   return (
     <div
-      className={`relative overflow-hidden border border-[#302B28]/14 bg-[#E8E0D3] shadow-[0_14px_34px_rgba(48,43,40,0.07)] ${className}`}
+      className={`relative overflow-hidden border border-[#123344]/14 bg-[#D4E8F0] shadow-[0_14px_34px_rgba(18,51,68,0.08)] ${className}`}
       style={{ aspectRatio: `${asset.width} / ${asset.height}` }}
     >
       {status !== 'missing' && (
@@ -57,38 +57,38 @@ export const AssetFrame: React.FC<AssetFrameProps> = ({
       )}
 
       {status === 'missing' && (
-        <div className="absolute inset-0 flex flex-col justify-between bg-[radial-gradient(circle_at_50%_28%,rgba(166,25,46,0.07),rgba(232,224,211,0.96)_72%)] p-6 sm:p-8">
-          <div className="flex items-center justify-between gap-2 border-b border-[#302B28]/12 pb-3">
-            <span className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-[#8E6F38]">
+        <div className="absolute inset-0 flex flex-col justify-between bg-[radial-gradient(circle_at_50%_28%,rgba(38,169,199,0.11),rgba(212,232,240,0.96)_72%)] p-6 sm:p-8">
+          <div className="flex items-center justify-between gap-2 border-b border-[#123344]/12 pb-3">
+            <span className="font-display text-xs font-semibold uppercase tracking-[0.22em] text-[#006B96]">
               Awaiting Supplied Photo
             </span>
-            <span className="h-2 w-2 rounded-full bg-[#A6192E]" />
+            <span className="h-2 w-2 rounded-full bg-[#26A9C7]" />
           </div>
 
           <div className="my-auto flex flex-col items-center text-center">
-            {/* Minimal Japanese-inspired silhouette framing */}
-            <div className="mb-5 flex h-24 w-20 items-center justify-center border border-[#302B28]/18 bg-[#F7F4ED]/90">
-              <div className="relative h-12 w-10 rounded-t-full border-x border-t border-[#302B28]/30">
-                <div className="absolute -bottom-5 left-1/2 h-4 w-14 -translate-x-1/2 border-t border-[#A6192E]/70" />
+            {/* Minimal geometric silhouette framing */}
+            <div className="mb-5 flex h-24 w-20 items-center justify-center border border-[#123344]/18 bg-[#F0F7FA]/90">
+              <div className="relative h-12 w-10 rounded-t-full border-x border-t border-[#123344]/30">
+                <div className="absolute -bottom-5 left-1/2 h-4 w-14 -translate-x-1/2 border-t border-[#006B96]/70" />
               </div>
             </div>
-            <p className="font-display text-xl font-bold uppercase tracking-[0.06em] text-[#302B28] sm:text-2xl">
+            <p className="font-display text-xl font-bold uppercase tracking-[0.06em] text-[#123344] sm:text-2xl">
               {fallbackTitle ?? asset.caption}
             </p>
-            <p className="mt-2 max-w-xs text-xs leading-relaxed text-[#655D56]">
+            <p className="mt-2 max-w-xs text-xs leading-relaxed text-[#526D7A]">
               {fallbackSubtitle ?? asset.alt}
             </p>
           </div>
 
-          <div className="border-t border-[#302B28]/12 pt-3 font-mono text-[11px] break-all text-[#655D56]">
+          <div className="border-t border-[#123344]/12 pt-3 font-mono text-[11px] break-all text-[#526D7A]">
             Drop file at: {asset.missingAssetLabel}
           </div>
         </div>
       )}
 
       {showBadge && status === 'loaded' && (
-        <div className="pointer-events-none absolute bottom-3 left-3 z-10 border border-[#302B28]/15 bg-[#FFFFFF]/90 px-2.5 py-1 backdrop-blur-sm">
-          <span className="font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-[#302B28]">
+        <div className="pointer-events-none absolute bottom-3 left-3 z-10 border border-[#123344]/15 bg-[#FFFFFF]/90 px-2.5 py-1 backdrop-blur-sm">
+          <span className="font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-[#123344]">
             {computedBadge}
           </span>
         </div>

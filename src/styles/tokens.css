@@ -1,20 +1,19 @@
 :root {
-  /* Japanese Ivory & Crimson Palette */
-  --color-ivory: #f7f4ed;
-  --color-beige: #e8e0d3;
+  /* Arctic Athlete Palette */
+  --color-arctic: #f0f7fa;
+  --color-glacier: #d4e8f0;
   --color-white: #ffffff;
-  --color-crimson: #a6192e;
-  --color-crimson-bright: #bf2138;
-  --color-espresso: #302b28;
-  --color-warm-grey: #655d56;
-  --color-gold: #b89b63;
-  --color-gold-subtle: rgba(184, 155, 99, 0.25);
+  --color-ocean: #006b96;
+  --color-cyan: #26a9c7;
+  --color-midnight: #123344;
+  --color-slate: #526d7a;
+  --color-cyan-subtle: rgba(38, 169, 199, 0.22);
 
-  /* Editorial Hairlines & Warm Shadows */
-  --border-subtle: rgba(48, 43, 40, 0.12);
-  --border-strong: rgba(48, 43, 40, 0.22);
-  --border-crimson: rgba(166, 25, 46, 0.42);
-  --shadow-warm: 0 24px 60px rgba(48, 43, 40, 0.1);
+  /* Editorial Hairlines & Cool Shadows */
+  --border-subtle: rgba(18, 51, 68, 0.12);
+  --border-strong: rgba(18, 51, 68, 0.22);
+  --border-ocean: rgba(0, 107, 150, 0.42);
+  --shadow-cool: 0 24px 60px rgba(18, 51, 68, 0.1);
 
   /* Typography */
   --font-display: 'Barlow Condensed', 'Impact', 'Arial Narrow', sans-serif;

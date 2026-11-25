@@ -101,7 +101,7 @@ export const FighterReveal: React.FC = () => {
         const h = el.clientHeight || 525;
         targetX = w * 0.5;
         targetY = h * 0.48;
-        targetR = Math.max(w, h) * 0.85;
+        targetR = Math.max(w, h) * 1.35;
       } else if (!isHovering) {
         targetR = 0;
       }
@@ -182,21 +182,21 @@ export const FighterReveal: React.FC = () => {
   // Complementary radial masks keep Judge and Fighter silhouettes clean with zero ghosting
   const judgeMaskStyle: React.CSSProperties = {
     WebkitMaskImage:
-      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), transparent 0%, rgba(0,0,0,0.18) 64%, #000 100%)',
+      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), transparent 0%, rgba(0,0,0,0.05) 52%, rgba(0,0,0,0.55) 76%, #000 100%)',
     maskImage:
-      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), transparent 0%, rgba(0,0,0,0.18) 64%, #000 100%)',
+      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), transparent 0%, rgba(0,0,0,0.05) 52%, rgba(0,0,0,0.55) 76%, #000 100%)',
   };
 
   const fighterMaskStyle: React.CSSProperties = {
     WebkitMaskImage:
-      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), #000 0%, rgba(0,0,0,0.94) 54%, transparent 100%)',
+      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), #000 0%, rgba(0,0,0,0.95) 52%, rgba(0,0,0,0.45) 76%, transparent 100%)',
     maskImage:
-      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), #000 0%, rgba(0,0,0,0.94) 54%, transparent 100%)',
+      'radial-gradient(circle var(--rr, 0px) at var(--rx, 50%) var(--ry, 42%), #000 0%, rgba(0,0,0,0.95) 52%, rgba(0,0,0,0.45) 76%, transparent 100%)',
   };
 
   return (
     <div className="relative mx-auto flex w-full max-w-[440px] flex-col items-center">
-      {/* Stationary 4:5 Portrait Registration Stage */}
+      {/* Stationary invisible 819:1024 positioning stage — Aditya stands directly over the Wave Grid */}
       <div
         ref={containerRef}
         data-fighter-reveal="true"
@@ -206,17 +206,11 @@ export const FighterReveal: React.FC = () => {
             setToggleRevealed((prev) => !prev);
           }
         }}
-        className="relative aspect-[4/5] w-full select-none overflow-hidden border border-[#302B28]/15 bg-gradient-to-b from-[#EDE6D9] via-[#E8E0D3] to-[#DFD5C5] shadow-[0_24px_64px_rgba(48,43,40,0.14)]"
+        className="relative aspect-[819/1024] w-full select-none overflow-visible bg-transparent"
       >
-        {/* Subtle warm studio rim backlight ensuring white karate gi pops cleanly */}
+        {/* LAYER A — THE JUDGE (Default Visible Transparent Portrait) */}
         <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_38%,rgba(166,25,46,0.09),rgba(48,43,40,0.04)_52%,transparent_76%)]"
-        />
-
-        {/* LAYER A — THE JUDGE (Default Visible Layer) */}
-        <div
-          className="pointer-events-none absolute inset-0 h-full w-full drop-shadow-[0_12px_24px_rgba(48,43,40,0.14)]"
+          className="pointer-events-none absolute inset-0 h-full w-full"
           style={canRevealFighter ? judgeMaskStyle : undefined}
         >
           {images.judgeLoaded ? (
@@ -226,18 +220,18 @@ export const FighterReveal: React.FC = () => {
               width={ASSET_MANIFEST.heroJudge.width}
               height={ASSET_MANIFEST.heroJudge.height}
               decoding="sync"
-              className="h-full w-full object-contain object-bottom"
+              className="h-full w-full object-contain object-bottom drop-shadow-[0_14px_26px_rgba(18,51,68,0.18)]"
             />
-          ) : (
+          ) : usingDevelopmentFallback ? (
             <RegisteredFallbackPortrait variant="judge" />
-          )}
+          ) : null}
         </div>
 
         {/* LAYER B — THE FIGHTER (Revealed Locally Under Cursor) */}
         {canRevealFighter && (
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 h-full w-full drop-shadow-[0_14px_28px_rgba(48,43,40,0.18)]"
+            className="pointer-events-none absolute inset-0 h-full w-full"
             style={fighterMaskStyle}
           >
             {images.fighterLoaded ? (
@@ -247,29 +241,11 @@ export const FighterReveal: React.FC = () => {
                 width={ASSET_MANIFEST.heroFighter.width}
                 height={ASSET_MANIFEST.heroFighter.height}
                 decoding="sync"
-                className="h-full w-full object-contain object-bottom"
+                className="h-full w-full object-contain object-bottom drop-shadow-[0_16px_30px_rgba(18,51,68,0.24)]"
               />
-            ) : (
+            ) : usingDevelopmentFallback ? (
               <RegisteredFallbackPortrait variant="fighter" />
-            )}
-          </div>
-        )}
-
-        {/* Frame corner hairlines */}
-        <span aria-hidden="true" className="pointer-events-none absolute left-3 top-3 h-4 w-4 border-l border-t border-[#302B28]/25" />
-        <span aria-hidden="true" className="pointer-events-none absolute right-3 top-3 h-4 w-4 border-r border-t border-[#302B28]/25" />
-        <span aria-hidden="true" className="pointer-events-none absolute bottom-3 left-3 h-4 w-4 border-b border-l border-[#A6192E]/60" />
-        <span aria-hidden="true" className="pointer-events-none absolute bottom-3 right-3 h-4 w-4 border-b border-r border-[#A6192E]/60" />
-
-        {/* Honest Development Fallback Status Bar when authentic photographs aren't supplied */}
-        {usingDevelopmentFallback && (
-          <div className="pointer-events-none absolute inset-x-3 bottom-3 z-20 flex items-center justify-between gap-2 border border-[#B89B63]/55 bg-[#FFFFFF]/92 px-3 py-1.5 backdrop-blur-sm">
-            <span className="font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8E6F38]">
-              Dev Fallback — Registered Silhouette
-            </span>
-            <span className="text-[10px] font-medium text-[#655D56]">
-              Awaiting Aditya Photos
-            </span>
+            ) : null}
           </div>
         )}
       </div>
@@ -280,22 +256,22 @@ export const FighterReveal: React.FC = () => {
           type="button"
           onClick={() => setToggleRevealed((prev) => !prev)}
           aria-pressed={toggleRevealed}
-          className="inline-flex items-center gap-2.5 border border-[#302B28]/20 bg-[#FFFFFF] px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#302B28] shadow-[0_6px_18px_rgba(48,43,40,0.06)] transition-colors hover:border-[#A6192E] hover:bg-[#A6192E]/10 focus-visible:outline-2 focus-visible:outline-[#A6192E]"
+          className="inline-flex items-center gap-2.5 border border-[#123344]/20 bg-[#FFFFFF] px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#123344] shadow-[0_6px_18px_rgba(18,51,68,0.07)] transition-colors hover:border-[#006B96] hover:bg-[#D4E8F0]/45 focus-visible:outline-2 focus-visible:outline-[#006B96]"
         >
           {toggleRevealed ? (
             <>
-              <Layers className="h-3.5 w-3.5 text-[#A6192E]" aria-hidden="true" />
+              <Layers className="h-3.5 w-3.5 text-[#006B96]" aria-hidden="true" />
               <span>Restore Judge Portrait</span>
             </>
           ) : (
             <>
-              <Eye className="h-3.5 w-3.5 text-[#A6192E]" aria-hidden="true" />
+              <Eye className="h-3.5 w-3.5 text-[#006B96]" aria-hidden="true" />
               <span>Reveal Fighter Within</span>
             </>
           )}
         </button>
 
-        <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#655D56]">
+        <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#526D7A]">
           {toggleRevealed ? 'Fighter Layer Active' : 'Hover or Toggle'}
         </span>
       </div>
@@ -325,8 +301,8 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
     >
       <defs>
         <linearGradient id={`bg-${variant}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor={isFighter ? '#E8DCD6' : '#EAE3D6'} />
-          <stop offset="100%" stopColor="#DDD3C2" />
+          <stop offset="0%" stopColor={isFighter ? '#CEE3ED' : '#DCEBF2'} />
+          <stop offset="100%" stopColor={isFighter ? '#BDD6E3' : '#CADFE9'} />
         </linearGradient>
         <linearGradient id="navyBlazer" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#1E2B45" />
@@ -334,14 +310,14 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
         </linearGradient>
         <linearGradient id="karateGi" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#FFFFFF" />
-          <stop offset="100%" stopColor="#F2ECE1" />
+          <stop offset="100%" stopColor="#EFF5F8" />
         </linearGradient>
       </defs>
 
       <rect width="800" height="1000" fill={`url(#bg-${variant})`} />
 
       {/* Precision landmark calibration grid lines */}
-      <g stroke={isFighter ? 'rgba(166,25,46,0.22)' : 'rgba(48,43,40,0.12)'} strokeWidth="1" strokeDasharray="4 6">
+      <g stroke={isFighter ? 'rgba(0,107,150,0.22)' : 'rgba(18,51,68,0.12)'} strokeWidth="1" strokeDasharray="4 6">
         <line x1="400" y1="70" x2="400" y2="940" />
         <line x1="150" y1="215" x2="650" y2="215" />
         <line x1="150" y1="285" x2="650" y2="285" />
@@ -352,14 +328,14 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
       {/* Identical head & neck geometry across both layers */}
       <path
         d="M354 378 L354 440 L446 440 L446 378 Z"
-        fill={isFighter ? '#E5D8CE' : '#E2D9CB'}
-        stroke="rgba(48,43,40,0.28)"
+        fill={isFighter ? '#D2E5EE' : '#DAE9F1'}
+        stroke="rgba(18,51,68,0.28)"
         strokeWidth="1.5"
       />
       <path
         d="M312 245 C312 162, 488 162, 488 245 C490 328, 452 388, 400 392 C348 388, 310 328, 312 245 Z"
-        fill={isFighter ? '#EFE7DF' : '#ECE5D8'}
-        stroke={isFighter ? 'rgba(166,25,46,0.65)' : 'rgba(48,43,40,0.38)'}
+        fill={isFighter ? '#E4F0F6' : '#E8F2F7'}
+        stroke={isFighter ? 'rgba(0,107,150,0.72)' : 'rgba(18,51,68,0.38)'}
         strokeWidth="2"
       />
 
@@ -369,21 +345,21 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
           <path
             d="M312 212 Q400 198 488 212 L488 238 Q400 226 312 238 Z"
             fill="#FFFFFF"
-            stroke="#A6192E"
+            stroke="#006B96"
             strokeWidth="1.8"
           />
-          <text x="400" y="230" textAnchor="middle" fill="#302B28" fontSize="11" fontWeight="700" letterSpacing="2">
+          <text x="400" y="230" textAnchor="middle" fill="#123344" fontSize="11" fontWeight="700" letterSpacing="2">
             WHITE HEADBAND
           </text>
         </g>
       ) : (
-        <text x="400" y="224" textAnchor="middle" fill="rgba(48,43,40,0.55)" fontSize="10" letterSpacing="2">
+        <text x="400" y="224" textAnchor="middle" fill="rgba(18,51,68,0.58)" fontSize="10" letterSpacing="2">
           CALM BROW ZONE
         </text>
       )}
 
       {/* Landmark: Eyes / Focus indicator */}
-      <g stroke={isFighter ? '#A6192E' : 'rgba(48,43,40,0.55)'} strokeWidth="2" fill="none">
+      <g stroke={isFighter ? '#006B96' : 'rgba(18,51,68,0.55)'} strokeWidth="2" fill="none">
         <line x1="342" y1={isFighter ? 278 : 284} x2="378" y2={isFighter ? 284 : 284} />
         <line x1="422" y1={isFighter ? 284 : 284} x2="458" y2={isFighter ? 278 : 284} />
         <circle cx="360" cy="294" r="5" />
@@ -393,7 +369,7 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
         x="400"
         y="344"
         textAnchor="middle"
-        fill={isFighter ? '#A6192E' : 'rgba(48,43,40,0.65)'}
+        fill={isFighter ? '#006B96' : 'rgba(18,51,68,0.68)'}
         fontSize="11"
         fontWeight="600"
         letterSpacing="2"
@@ -404,55 +380,55 @@ const RegisteredFallbackPortrait: React.FC<{ variant: 'judge' | 'fighter' }> = (
       {/* Landmark: Registered Shoulders & Torso */}
       {isFighter ? (
         <g>
-          {/* White Karate Gi — contrasted cleanly against Soft Beige frame via subtle warm stroke */}
+          {/* White Karate Gi — contrasted cleanly against Glacier Blue frame via subtle Midnight Teal edge */}
           <path
             d="M175 505 C215 445, 305 426, 352 426 L400 568 L448 426 C495 426, 585 445, 625 505 L664 890 L136 890 Z"
             fill="url(#karateGi)"
-            stroke="rgba(48,43,40,0.32)"
+            stroke="rgba(18,51,68,0.34)"
             strokeWidth="2"
           />
           {/* Crossed Gi Lapels */}
-          <path d="M342 426 L432 760 L398 760 L318 432 Z" fill="#EFE9DE" stroke="#B6ACA0" strokeWidth="1.2" />
-          <path d="M458 426 L378 760 L412 760 L482 432 Z" fill="#FFFFFF" stroke="#B6ACA0" strokeWidth="1.2" />
+          <path d="M342 426 L432 760 L398 760 L318 432 Z" fill="#E6F0F5" stroke="#8CA6B3" strokeWidth="1.2" />
+          <path d="M458 426 L378 760 L412 760 L482 432 Z" fill="#FFFFFF" stroke="#8CA6B3" strokeWidth="1.2" />
           {/* Black Belt at Waist */}
-          <rect x="218" y="762" width="364" height="38" rx="4" fill="#302B28" stroke="#B89B63" strokeWidth="1.5" />
-          <path d="M376 762 L424 762 L434 800 L366 800 Z" fill="#221E1C" stroke="#F7F4ED" strokeOpacity="0.25" />
-          <path d="M384 800 L356 898 L382 904 L402 800 Z" fill="#302B28" />
-          <path d="M416 800 L446 896 L420 902 L400 800 Z" fill="#302B28" />
-          <text x="400" y="625" textAnchor="middle" fill="#302B28" fontSize="14" fontWeight="700" letterSpacing="3">
+          <rect x="218" y="762" width="364" height="38" rx="4" fill="#182229" stroke="#26A9C7" strokeWidth="1.2" />
+          <path d="M376 762 L424 762 L434 800 L366 800 Z" fill="#10181D" stroke="#F0F7FA" strokeOpacity="0.25" />
+          <path d="M384 800 L356 898 L382 904 L402 800 Z" fill="#182229" />
+          <path d="M416 800 L446 896 L420 902 L400 800 Z" fill="#182229" />
+          <text x="400" y="625" textAnchor="middle" fill="#123344" fontSize="14" fontWeight="700" letterSpacing="3">
             WHITE KARATE GI
           </text>
-          <text x="400" y="786" textAnchor="middle" fill="#F7F4ED" fontSize="11" fontWeight="700" letterSpacing="2.5">
+          <text x="400" y="786" textAnchor="middle" fill="#F0F7FA" fontSize="11" fontWeight="700" letterSpacing="2.5">
             BLACK BELT
           </text>
         </g>
       ) : (
         <g>
-          {/* White Dress Shirt & Yellow Tie */}
-          <path d="M350 426 L450 426 L435 795 L365 795 Z" fill="#FFFFFF" stroke="rgba(48,43,40,0.18)" strokeWidth="1" />
+          {/* White Dress Shirt & Yellow Tie (Authentic uniform colours preserved) */}
+          <path d="M350 426 L450 426 L435 795 L365 795 Z" fill="#FFFFFF" stroke="rgba(18,51,68,0.2)" strokeWidth="1" />
           <path d="M391 446 L409 446 L418 710 L400 738 L382 710 Z" fill="#D4A62A" stroke="#9C7615" strokeWidth="1.2" />
           {/* Dark Navy Judge Blazer */}
           <path
             d="M175 505 C215 445, 305 426, 352 426 L388 615 L368 890 L136 890 Z"
             fill="url(#navyBlazer)"
-            stroke="rgba(48,43,40,0.28)"
+            stroke="rgba(18,51,68,0.3)"
             strokeWidth="1.5"
           />
           <path
             d="M625 505 C585 445, 495 426, 448 426 L412 615 L432 890 L664 890 Z"
             fill="url(#navyBlazer)"
-            stroke="rgba(48,43,40,0.28)"
+            stroke="rgba(18,51,68,0.3)"
             strokeWidth="1.5"
           />
           {/* Judge Badge */}
-          <rect x="466" y="556" width="52" height="32" rx="3" fill="#111827" stroke="#B89B63" strokeWidth="1.5" />
-          <text x="492" y="576" textAnchor="middle" fill="#B89B63" fontSize="9" fontWeight="700" letterSpacing="1.5">
+          <rect x="466" y="556" width="52" height="32" rx="3" fill="#111827" stroke="#C5A059" strokeWidth="1.5" />
+          <text x="492" y="576" textAnchor="middle" fill="#C5A059" fontSize="9" fontWeight="700" letterSpacing="1.5">
             JUDGE
           </text>
-          <text x="400" y="655" textAnchor="middle" fill="rgba(247,244,237,0.88)" fontSize="13" fontWeight="700" letterSpacing="3">
+          <text x="400" y="655" textAnchor="middle" fill="rgba(240,247,250,0.9)" fontSize="13" fontWeight="700" letterSpacing="3">
             NAVY BLAZER + YELLOW TIE
           </text>
-          <text x="400" y="810" textAnchor="middle" fill="rgba(247,244,237,0.65)" fontSize="11" letterSpacing="2">
+          <text x="400" y="810" textAnchor="middle" fill="rgba(240,247,250,0.68)" fontSize="11" letterSpacing="2">
             WAIST REGISTRATION LINE
           </text>
         </g>

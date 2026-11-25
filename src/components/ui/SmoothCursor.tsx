@@ -31,15 +31,15 @@ export const DefaultCursorSVG: React.FC = () => (
     height={32}
     viewBox="0 0 50 54"
     fill="none"
-    style={{ filter: 'drop-shadow(0 3px 8px rgba(48, 43, 40, 0.22))' }}
+    style={{ filter: 'drop-shadow(0 3px 8px rgba(18, 51, 68, 0.22))' }}
   >
     <path
       d="M42.6817 41.1495L27.5103 6.79925C26.7269 5.02557 24.2082 5.02558 23.3927 6.79925L7.59814 41.1495C6.75833 42.9759 8.52712 44.8902 10.4125 44.1954L24.3757 39.0496C24.8829 38.8627 25.4385 38.8627 25.9422 39.0496L39.8121 44.1954C41.6849 44.8902 43.4884 42.9759 42.6817 41.1495Z"
-      fill="#A6192E"
+      fill="#006B96"
     />
     <path
       d="M43.7146 40.6933L28.5431 6.34306C27.3556 3.65428 23.5772 3.69516 22.3668 6.32755L6.57226 40.6778C5.3134 43.4156 7.97238 46.298 10.803 45.2549L24.7662 40.109C25.0221 40.0147 25.2999 40.0156 25.5494 40.1082L39.4193 45.254C42.2261 46.2953 44.9254 43.4347 43.7146 40.6933Z"
-      stroke="#F7F4ED"
+      stroke="#F0F7FA"
       strokeWidth={2.4}
     />
   </svg>
@@ -319,12 +319,12 @@ export const SmoothCursor: React.FC<SmoothCursorProps> = ({
       <div
         ref={revealRingRef}
         data-portrait-reveal-cursor="true"
-        className="pointer-events-none fixed left-0 top-0 flex items-end justify-center rounded-full border border-[#A6192E]/80 bg-[#A6192E]/[0.06] shadow-[0_0_24px_rgba(166,25,46,0.14)] will-change-transform"
+        className="pointer-events-none fixed left-0 top-0 flex items-end justify-center rounded-full border border-[#006B96]/80 bg-[#26A9C7]/[0.07] shadow-[0_0_24px_rgba(38,169,199,0.16)] will-change-transform"
         style={{ opacity: 0, visibility: 'hidden', width: 218, height: 218 }}
       >
         <span
           ref={revealLabelRef}
-          className="mb-2.5 select-none font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-[#302B28]/80 transition-opacity duration-150"
+          className="mb-2.5 select-none font-display text-[10px] font-semibold uppercase tracking-[0.22em] text-[#123344]/85 transition-opacity duration-150"
           style={{ opacity: 0 }}
         >
           WITHIN

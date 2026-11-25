@@ -19,7 +19,7 @@ export function App() {
 
   return (
     <MotionConfig reducedMotion="user">
-      <div className="min-h-screen bg-[#F7F4ED] text-[#302B28]">
+      <div className="min-h-screen bg-[#F0F7FA] text-[#123344]">
         <SmoothCursor />
         <NotchNavbar />
         <main>
