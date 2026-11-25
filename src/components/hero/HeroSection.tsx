@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '../../data/siteConfig';
 import { AnimatedHeading } from '../ui/AnimatedHeading';
 import { LiquidButton } from '../ui/LiquidButton';
 import { FighterReveal } from './FighterReveal';
-import { InteractiveGridBackground } from './InteractiveGridBackground';
+import { WaveGridBackground } from './WaveGridBackground';
 
 export const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLElement>(null);
@@ -15,8 +15,8 @@ export const HeroSection: React.FC = () => {
       ref={heroRef}
       className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#F7F4ED] pt-24 pb-8 sm:pt-28 sm:pb-10"
     >
-      {/* Interactive crimson dot-grid background */}
-      <InteractiveGridBackground containerRef={heroRef} />
+      {/* Interactive Ivory & Crimson Wave Grid Background */}
+      <WaveGridBackground containerRef={heroRef} />
 
       {/* Subtle oversized atmospheric backdrop typography (strictly behind portrait, never over face) */}
       <div
