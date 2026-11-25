@@ -1,0 +1,33 @@
+:root {
+  /* Japanese Warrior Palette */
+  --color-obsidian: #0c0c0c;
+  --color-obsidian-elevated: #141414;
+  --color-charcoal: #292929;
+  --color-charcoal-soft: #1b1b1b;
+  --color-crimson: #b91c1c;
+  --color-crimson-bright: #dc2626;
+  --color-burgundy: #5c0d0d;
+  --color-ivory: #f5f1e8;
+  --color-ivory-muted: rgba(245, 241, 232, 0.72);
+  --color-ivory-subtle: rgba(245, 241, 232, 0.44);
+  --color-gold: #c5a059;
+  --color-gold-subtle: rgba(197, 160, 89, 0.25);
+
+  /* Editorial Hairlines */
+  --border-subtle: rgba(245, 241, 232, 0.1);
+  --border-strong: rgba(245, 241, 232, 0.22);
+  --border-crimson: rgba(185, 28, 28, 0.45);
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', 'Impact', 'Arial Narrow', sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing & Layout */
+  --container-max: 1400px;
+  --section-py: clamp(5rem, 10vw, 9.5rem);
+  --nav-height: 76px;
+
+  /* Motion */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-sharp: cubic-bezier(0.16, 1, 0.3, 1);
+}
