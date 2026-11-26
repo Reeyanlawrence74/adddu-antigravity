@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { MotionConfig } from 'motion/react';
 import { SITE_CONFIG } from './data/siteConfig';
 import { SmoothCursor } from './components/ui/SmoothCursor';
@@ -13,17 +13,42 @@ import { StatsCounter } from './components/sections/StatsCounter';
 import { TestimonialsCarousel } from './components/sections/TestimonialsCarousel';
 import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/layout/Footer';
+import { NikePreloader } from './components/preloader/NikePreloader';
+import { ProgressiveBlur } from './components/ui/ProgressiveBlur';
 
 export function App() {
   const [demoMode, setDemoMode] = useState<boolean>(SITE_CONFIG.demoMode);
+  const [showPreloader, setShowPreloader] = useState<boolean>(true);
+  const [heroEntranceReady, setHeroEntranceReady] = useState<boolean>(false);
+
+  const handlePreloaderExitStart = useCallback(() => {
+    setHeroEntranceReady(true);
+  }, []);
+
+  const handlePreloaderExitComplete = useCallback(() => {
+    setHeroEntranceReady(true);
+    setShowPreloader(false);
+  }, []);
 
   return (
     <MotionConfig reducedMotion="user">
       <div className="min-h-screen bg-[#F0F7FA] text-[#123344]">
-        <SmoothCursor />
+        {showPreloader && (
+          <NikePreloader
+            onExitStart={handlePreloaderExitStart}
+            onExitComplete={handlePreloaderExitComplete}
+          />
+        )}
+        {!showPreloader && <SmoothCursor />}
+        {!showPreloader && (
+          <>
+            <ProgressiveBlur position="top" backgroundColor="#F0F7FA" />
+            <ProgressiveBlur position="bottom" backgroundColor="#F0F7FA" />
+          </>
+        )}
         <NotchNavbar />
         <main>
-          <HeroSection />
+          <HeroSection entranceReady={heroEntranceReady} />
           <AboutSection />
           <JourneySection />
           <CompetitionGallery />

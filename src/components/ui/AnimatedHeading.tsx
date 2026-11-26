@@ -16,6 +16,8 @@ interface AnimatedHeadingProps {
   delay?: number;
   /** Set true for above-the-fold hero headings so they animate immediately on mount */
   animateOnMount?: boolean;
+  /** Pause entrance animation while a fullscreen preloader covers the viewport */
+  paused?: boolean;
 }
 
 export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
@@ -26,11 +28,12 @@ export const AnimatedHeading: React.FC<AnimatedHeadingProps> = ({
   accentLastLine = false,
   delay = 0,
   animateOnMount = false,
+  paused = false,
 }) => {
   const prefersReducedMotion = useReducedMotion();
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, { once: true, amount: 0.12 });
-  const shouldAnimate = animateOnMount || inView;
+  const shouldAnimate = !paused && (animateOnMount || inView);
   const Tag = as;
 
   if (prefersReducedMotion) {

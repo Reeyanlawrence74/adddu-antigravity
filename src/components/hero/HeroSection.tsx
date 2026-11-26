@@ -6,7 +6,12 @@ import { LiquidButton } from '../ui/LiquidButton';
 import { FighterReveal } from './FighterReveal';
 import { WaveGridBackground } from './WaveGridBackground';
 
-export const HeroSection: React.FC = () => {
+export interface HeroSectionProps {
+  /** Defers mount entrance animation until preloader exit begins */
+  entranceReady?: boolean;
+}
+
+export const HeroSection: React.FC<HeroSectionProps> = ({ entranceReady = true }) => {
   const heroRef = useRef<HTMLElement>(null);
 
   return (
@@ -43,6 +48,7 @@ export const HeroSection: React.FC = () => {
             as="h1"
             mode="masked-line"
             animateOnMount
+            paused={!entranceReady}
             lines={SITE_CONFIG.brand.heroHeadline}
             accentLastLine
             className="font-display text-[clamp(2.55rem,4.3vw,3.9rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.02em] text-[#123344]"

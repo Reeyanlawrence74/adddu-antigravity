@@ -1,0 +1,127 @@
+/* Scoped exclusively to the Nike-inspired ADITYA Preloader */
+
+.nike-preloader-root {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background-color: #080808;
+  overflow: hidden;
+  isolation: isolate;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  will-change: transform;
+}
+
+.nike-preloader-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #080808;
+  overflow: hidden;
+}
+
+.nike-preloader-frame {
+  position: absolute;
+  overflow: hidden;
+  background-color: #080808;
+  will-change: transform, clip-path, opacity;
+  pointer-events: none;
+}
+
+.nike-preloader-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Preserve original black-and-white tones and film grain without extra filters */
+  filter: none;
+  transform: translateZ(0);
+}
+
+.nike-preloader-wordmark-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  padding-inline: 2vw;
+}
+
+.nike-preloader-wordmark-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+}
+
+.nike-preloader-wordmark {
+  margin: 0;
+  padding: 0;
+  font-family: 'Sofia Sans Condensed', 'Sofia Sans Extra Condensed', 'Impact', 'Arial Narrow', sans-serif;
+  font-weight: 1000;
+  font-style: normal;
+  font-synthesis-weight: none;
+  text-transform: uppercase;
+  color: #e31b23;
+  letter-spacing: -0.045em;
+  line-height: 0.84;
+  white-space: nowrap;
+  text-align: center;
+  font-size: clamp(4.75rem, 30vw, 31vw);
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 767px) {
+  .nike-preloader-wordmark {
+    font-size: clamp(4.25rem, 29.5vw, 9.5rem);
+    letter-spacing: -0.04em;
+  }
+}
+
+.nike-preloader-skip {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 36px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(8, 8, 8, 0.72);
+  color: rgba(255, 255, 255, 0.72);
+  font-family: 'Sofia Sans Condensed', 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+@media (min-width: 640px) {
+  .nike-preloader-skip {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
+
+.nike-preloader-skip:hover {
+  color: #e31b23;
+  border-color: #e31b23;
+  background-color: #080808;
+}
+
+.nike-preloader-skip:focus-visible {
+  outline: 2px solid #e31b23;
+  outline-offset: 3px;
+  color: #e31b23;
+  border-color: #e31b23;
+}
