@@ -11,6 +11,38 @@ export interface ManagedImageAsset {
   missingAssetLabel: string;
 }
 
+export interface FrameSequenceSpec {
+  basePath: string;
+  frameCount: number;
+  width: number;
+  height: number;
+  maxCachedFrames: number;
+}
+
+export const JUDGE_FRAME_SEQUENCES: Record<'desktop' | 'mobile', FrameSequenceSpec> = {
+  desktop: {
+    basePath: '/frames/judge/desktop',
+    // Original sequence is 190 frames across 7s (~27.14 fps); first 6s (0:00–0:06) = frames 0000..0162 (163 frames)
+    frameCount: 163,
+    width: 720,
+    height: 1280,
+    maxCachedFrames: 16,
+  },
+  mobile: {
+    basePath: '/frames/judge/mobile',
+    // First 6s (0:00–0:06) = frames 0000..0162 (163 frames)
+    frameCount: 163,
+    width: 432,
+    height: 768,
+    maxCachedFrames: 10,
+  },
+};
+
+export function getJudgeFrameUrl(variant: 'desktop' | 'mobile', index: number): string {
+  const padded = String(index).padStart(4, '0');
+  return `${JUDGE_FRAME_SEQUENCES[variant].basePath}/frame_${padded}.webp`;
+}
+
 export const ASSET_MANIFEST: Record<string, ManagedImageAsset> = {
   heroJudge: {
     id: 'hero-judge',

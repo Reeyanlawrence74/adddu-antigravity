@@ -13,7 +13,7 @@ export const HeroSection: React.FC = () => {
     <section
       id="home"
       ref={heroRef}
-      className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#F0F7FA] pt-24 pb-8 sm:pt-28 sm:pb-10"
+      className="relative flex min-h-[100svh] w-full flex-col justify-between overflow-hidden bg-[#F0F7FA] pt-20 pb-5 sm:pt-22 sm:pb-6"
     >
       {/* Interactive Arctic & Ocean Wave Grid Background */}
       <WaveGridBackground containerRef={heroRef} />
@@ -23,18 +23,18 @@ export const HeroSection: React.FC = () => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-1/2 z-0 -translate-y-1/2 select-none overflow-hidden text-center"
       >
-        <span className="font-display text-[21vw] font-extrabold uppercase leading-[0.82] tracking-[-0.04em] text-[#123344]/[0.04]">
+        <span className="font-display text-[21vw] font-extrabold uppercase leading-[0.82] tracking-[-0.04em] text-[#123344]/[0.025]">
           ADITYA
         </span>
       </div>
 
-      {/* Main 3-Part Editorial Composition */}
-      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] flex-1 grid-cols-1 items-center gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:gap-6">
-        {/* LEFT SIDE: Narrative Identity & Primary Liquid CTA */}
-        <div className="order-2 flex flex-col items-start lg:order-1 lg:col-span-4">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#006B96]" aria-hidden="true" />
-            <span className="font-display text-sm font-semibold uppercase tracking-[0.28em] text-[#123344]">
+      {/* Main 3-Part Editorial Composition — Subject-led with generous breathing room */}
+      <div className="relative z-10 mx-auto grid w-full max-w-[1400px] flex-1 grid-cols-1 items-center gap-6 px-5 sm:px-8 lg:grid-cols-12 lg:gap-6">
+        {/* LEFT SIDE: Refined Identity & Compact Liquid CTA */}
+        <div className="order-2 flex flex-col items-start lg:order-1 lg:col-span-3">
+          <div className="mb-3 flex items-center gap-2.5">
+            <span className="h-px w-6 bg-[#006B96]" aria-hidden="true" />
+            <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#526D7A]">
               {SITE_CONFIG.brand.wordmark}
             </span>
           </div>
@@ -45,45 +45,46 @@ export const HeroSection: React.FC = () => {
             animateOnMount
             lines={SITE_CONFIG.brand.heroHeadline}
             accentLastLine
-            className="font-display text-[clamp(3.6rem,7.2vw,6.4rem)] font-extrabold uppercase leading-[0.88] tracking-[-0.02em] text-[#123344]"
+            className="font-display text-[clamp(2.55rem,4.3vw,3.9rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.02em] text-[#123344]"
           />
 
-          <p className="mt-5 max-w-sm text-base font-medium tracking-[0.04em] text-[#123344]/85 sm:text-lg">
+          <p className="mt-3.5 max-w-xs text-sm font-medium tracking-[0.03em] text-[#526D7A] sm:text-base">
             {SITE_CONFIG.brand.heroSubline}
           </p>
 
-          <p className="mt-2 max-w-sm text-xs font-semibold uppercase tracking-[0.22em] text-[#006B96]">
+          <p className="mt-1.5 max-w-xs text-[10px] font-semibold uppercase tracking-[0.2em] text-[#006B96]/85">
             {SITE_CONFIG.brand.narrative}
           </p>
 
-          <div className="mt-8">
+          <div className="mt-6">
             <LiquidButton
               href="#journey"
               variant="crimson"
-              icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
+              className="!px-5 !py-2.5 [&>span:last-child]:!text-sm [&>span:last-child]:!tracking-[0.15em]"
+              icon={<ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />}
             >
               Explore My Journey
             </LiquidButton>
           </div>
         </div>
 
-        {/* CENTRE: Signature Stationary Waist-Up Portrait with Local Cursor Reveal */}
-        <div className="order-1 flex items-center justify-center lg:order-2 lg:col-span-5">
+        {/* CENTRE: Dominant Stationary Portrait (~80% Hero Height) with Local Cursor Reveal */}
+        <div className="order-1 flex items-center justify-center lg:order-2 lg:col-span-6">
           <FighterReveal />
         </div>
 
-        {/* RIGHT SIDE: Interactive Discovery Cue */}
+        {/* RIGHT SIDE: Minimal Interactive Discovery Cue */}
         <div className="order-3 flex flex-col items-start lg:col-span-3 lg:items-end lg:text-right">
-          <div className="border-l-2 border-[#006B96] pl-4 lg:border-l-0 lg:border-r-2 lg:pl-0 lg:pr-4">
-            <p className="font-display text-2xl font-bold uppercase tracking-[0.14em] text-[#123344] sm:text-3xl">
+          <div className="border-l border-[#006B96]/50 pl-3.5 lg:border-l-0 lg:border-r lg:pl-0 lg:pr-3.5">
+            <p className="font-display text-lg font-bold uppercase tracking-[0.15em] text-[#123344] sm:text-xl">
               {SITE_CONFIG.brand.heroPromptTitle}
             </p>
-            <p className="mt-2.5 max-w-[260px] text-sm leading-relaxed text-[#526D7A]">
+            <p className="mt-1.5 max-w-[220px] text-xs leading-relaxed text-[#526D7A] sm:text-[13px]">
               {SITE_CONFIG.brand.heroPromptCopy}
             </p>
           </div>
 
-          <div className="mt-6 hidden flex-col items-end gap-1.5 text-[11px] font-medium uppercase tracking-[0.2em] text-[#526D7A] lg:flex">
+          <div className="mt-5 hidden flex-col items-end gap-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#526D7A]/70 lg:flex">
             <span>Forehead → Headband</span>
             <span>Eyes → Focus</span>
             <span>Chest → White Gi</span>
@@ -93,13 +94,13 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Minimal Scroll Indicator */}
-      <div className="relative z-10 mx-auto mt-6 flex w-full max-w-[1400px] items-center justify-between px-5 sm:px-8">
-        <span className="font-display text-[11px] font-semibold uppercase tracking-[0.26em] text-[#526D7A]">
+      <div className="relative z-10 mx-auto mt-3 flex w-full max-w-[1400px] items-center justify-between px-5 sm:px-8">
+        <span className="font-display text-[10px] font-semibold uppercase tracking-[0.26em] text-[#526D7A]/80">
           CHAPTER 01 — THE JUDGE
         </span>
         <a
           href="#about"
-          className="group inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.24em] text-[#123344]/80 transition-colors hover:text-[#006B96]"
+          className="group inline-flex items-center gap-2 font-display text-[11px] font-semibold uppercase tracking-[0.24em] text-[#123344]/75 transition-colors hover:text-[#006B96]"
         >
           <span>Scroll</span>
           <ArrowDown className="h-3.5 w-3.5 text-[#006B96] transition-transform duration-300 group-hover:translate-y-1" />

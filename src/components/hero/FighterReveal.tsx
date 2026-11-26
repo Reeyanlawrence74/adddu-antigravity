@@ -195,8 +195,8 @@ export const FighterReveal: React.FC = () => {
   };
 
   return (
-    <div className="relative mx-auto flex w-full max-w-[440px] flex-col items-center">
-      {/* Stationary invisible 819:1024 positioning stage — Aditya stands directly over the Wave Grid */}
+    <div className="relative mx-auto flex w-full flex-col items-center">
+      {/* Stationary invisible 819:1024 positioning stage — Aditya stands tall (~78-80% hero height) directly over the Wave Grid */}
       <div
         ref={containerRef}
         data-fighter-reveal="true"
@@ -206,7 +206,7 @@ export const FighterReveal: React.FC = () => {
             setToggleRevealed((prev) => !prev);
           }
         }}
-        className="relative aspect-[819/1024] w-full select-none overflow-visible bg-transparent"
+        className="relative aspect-[819/1024] h-[52svh] max-w-full select-none overflow-visible bg-transparent sm:h-[60svh] lg:h-[78svh] lg:max-h-[760px]"
       >
         {/* LAYER A — THE JUDGE (Default Visible Transparent Portrait) */}
         <div
@@ -250,29 +250,29 @@ export const FighterReveal: React.FC = () => {
         )}
       </div>
 
-      {/* Accessible Portrait Toggle (Desktop Keyboard + Mobile Primary Control) */}
-      <div className="mt-4 flex w-full items-center justify-between gap-3">
+      {/* Compact Accessible Portrait Toggle (Desktop Keyboard + Mobile Primary Control) */}
+      <div className="mt-2.5 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={() => setToggleRevealed((prev) => !prev)}
           aria-pressed={toggleRevealed}
-          className="inline-flex items-center gap-2.5 border border-[#123344]/20 bg-[#FFFFFF] px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.18em] text-[#123344] shadow-[0_6px_18px_rgba(18,51,68,0.07)] transition-colors hover:border-[#006B96] hover:bg-[#D4E8F0]/45 focus-visible:outline-2 focus-visible:outline-[#006B96]"
+          className="inline-flex items-center gap-2 border border-[#123344]/15 bg-[#FFFFFF]/80 px-3 py-1.5 font-display text-[11px] font-semibold uppercase tracking-[0.16em] text-[#123344] backdrop-blur-sm transition-colors hover:border-[#006B96] hover:text-[#006B96] focus-visible:outline-2 focus-visible:outline-[#006B96]"
         >
           {toggleRevealed ? (
             <>
-              <Layers className="h-3.5 w-3.5 text-[#006B96]" aria-hidden="true" />
+              <Layers className="h-3 w-3 text-[#006B96]" aria-hidden="true" />
               <span>Restore Judge Portrait</span>
             </>
           ) : (
             <>
-              <Eye className="h-3.5 w-3.5 text-[#006B96]" aria-hidden="true" />
+              <Eye className="h-3 w-3 text-[#006B96]" aria-hidden="true" />
               <span>Reveal Fighter Within</span>
             </>
           )}
         </button>
 
-        <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#526D7A]">
-          {toggleRevealed ? 'Fighter Layer Active' : 'Hover or Toggle'}
+        <span className="hidden text-[10px] font-medium uppercase tracking-[0.14em] text-[#526D7A]/75 sm:inline">
+          {toggleRevealed ? 'Fighter Active' : 'Hover or Toggle'}
         </span>
       </div>
     </div>
