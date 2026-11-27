@@ -33,10 +33,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ entranceReady = true }
         </span>
       </div>
 
-      {/* Main 3-Part Editorial Composition — Subject-led with generous breathing room */}
+      {/* Main 3-Part Editorial Composition — Upper-left oversized headline + centred portrait */}
       <div className="relative z-10 mx-auto grid w-full max-w-[1400px] flex-1 grid-cols-1 items-center gap-6 px-5 sm:px-8 lg:grid-cols-12 lg:gap-6">
-        {/* LEFT SIDE: Refined Identity & Compact Liquid CTA */}
-        <div className="order-2 flex flex-col items-start lg:order-1 lg:col-span-3">
+        {/* LEFT SIDE: Upper-left Editorial Identity & Compact Liquid CTA */}
+        <div className="order-2 flex flex-col items-start lg:order-1 lg:col-span-4 lg:self-start lg:pt-[clamp(2.25rem,7svh,4.5rem)] lg:pl-2">
           <div className="mb-3 flex items-center gap-2.5">
             <span className="h-px w-6 bg-[#006B96]" aria-hidden="true" />
             <span className="font-display text-xs font-semibold uppercase tracking-[0.26em] text-[#526D7A]">
@@ -51,10 +51,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ entranceReady = true }
             paused={!entranceReady}
             lines={SITE_CONFIG.brand.heroHeadline}
             accentLastLine
-            className="font-display text-[clamp(2.55rem,4.3vw,3.9rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.02em] text-[#123344]"
+            className="font-display text-[clamp(2.9rem,5.2vw,4.9rem)] font-extrabold uppercase leading-[0.9] tracking-[-0.02em] text-[#123344]"
           />
 
-          <p className="mt-3.5 max-w-xs text-sm font-medium tracking-[0.03em] text-[#526D7A] sm:text-base">
+          <p className="mt-4 max-w-xs text-sm font-medium tracking-[0.03em] text-[#526D7A] sm:text-base">
             {SITE_CONFIG.brand.heroSubline}
           </p>
 
@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ entranceReady = true }
         </div>
 
         {/* CENTRE: Dominant Stationary Portrait (~80% Hero Height) with Local Cursor Reveal */}
-        <div className="order-1 flex items-center justify-center lg:order-2 lg:col-span-6">
+        <div className="order-1 flex items-center justify-center lg:order-2 lg:col-span-5">
           <FighterReveal />
         </div>
 

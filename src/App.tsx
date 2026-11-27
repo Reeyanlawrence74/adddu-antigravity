@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 import { MotionConfig } from 'motion/react';
 import { SITE_CONFIG } from './data/siteConfig';
 import { SmoothCursor } from './components/ui/SmoothCursor';
@@ -21,7 +21,12 @@ export function App() {
   const [showPreloader, setShowPreloader] = useState<boolean>(true);
   const [heroEntranceReady, setHeroEntranceReady] = useState<boolean>(false);
 
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, []);
+
   const handlePreloaderExitStart = useCallback(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
     setHeroEntranceReady(true);
   }, []);
 
